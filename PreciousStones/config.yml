@@ -218,6 +218,7 @@ warn:
   cannon: true
   mine: true
 settings:
+  disable-messages: false
   prevent-removal-if-player-in-field: true
   disable-simpleclans-hook: false
   max-size-translocation: 100000
