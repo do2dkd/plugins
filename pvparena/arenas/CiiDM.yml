@@ -95,11 +95,11 @@ block:
 goals:
 - PlayerDeathMatch
 mods:
-- Vault
 - StandardSpectate
-- Announcements
+- Vault
 - StandardLounge
 - BattlefieldJoin
+- Announcements
 msg:
   lounge: Welcome to the arena lounge! Hit a class sign and then the iron block to flag yourself as ready!
   playerjoined: '%1% joined the Arena!'
@@ -193,6 +193,12 @@ modules:
     onehititems: none
     resetkillstreakondeath: true
     explodeondeath: true
+  bettergears:
+    head: true
+    chest: true
+    leg: true
+    foot: true
+    onlyifleather: false
   blockrestore:
     hard: false
     offset: 1
@@ -238,6 +244,12 @@ modules:
     winPot: false
     winFactor: 2.0
     winreward: 0
+    reward:
+      playerDeath: 0.0
+      playerKill: 0.0
+      playerScore: 0.0
+      trigger: 0.0
+      playerWin: 0.0
   walls:
     wallmaterial: SAND
     wallseconds: 300

@@ -18,6 +18,8 @@ dynmap/web/tiles/
 dynmap/web/standalone/*.json
 dynmap/ids-by-ip.txt
 dynmap/hiddenplayers.txt
+dynmap/version.txt
+dynmap/dynmap_access.php
 Gringotts/GringottsDB/
 MobArena/inventories/
 MobArena/arenas/

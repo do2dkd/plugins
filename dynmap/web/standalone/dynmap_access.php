@@ -1,5 +1,5 @@
 <?php
-$tilespath = '/Users/eungg.kim/tmp/minecraft/plugins/dynmap/web/tiles/';
-$markerspath = '/Users/eungg.kim/tmp/minecraft/plugins/dynmap/web/tiles/';
-$webpath = '/Users/eungg.kim/tmp/minecraft/plugins/dynmap/web/';
+$tilespath = '/Users/ipx/server/bukkit/plugins/dynmap/web/tiles/';
+$markerspath = '/Users/ipx/server/bukkit/plugins/dynmap/web/tiles/';
+$webpath = '/Users/ipx/server/bukkit/plugins/dynmap/web/';
 ?>
