@@ -60,7 +60,6 @@ cannotAssignAsOwners: '{aqua}Cannot assign groups or clans as owners'
 cannotChangeGameMode: '{red}Cannot change your game mode in this field'
 cannotDisallowWhenOverlap: '{red}You cannot disallow {1.player}, one of his fields is intersecting yours'
 cannotEnable: Could not enable the field
-cannotExpand: '{red} Cannot expand the field, it overflows available volume by {1.volume} blocks.'
 cannotHideOrphan: '{red} Cannot hide orphaned field'
 cannotPlaceNextToRedstone: '{red}Cannot place blocks next to a redstone-enabled field you don''t own'
 cannotRedefineWhileCuboid: '{red}The field has sub-fields inside of it thus cannot be redifined.'
@@ -69,8 +68,6 @@ cannotRemoveWithSubplots: '{red}Cannot remove fields that have plot-fields insid
 cannotReshapeWhileCuboid: '{red}Cannot reshape a translocation cuboid once its in use'
 cannotTakeOwnership: '{aqua}You cannot take ownership of this field. It has been given to: {1.new-owner}'
 cannotTeleportInsideField: '{red} Cannot teleport inside a field with the prevent-teleport flag'
-cannotUseItemHere: '{red}You cannot hold that item here.'
-cannotUseItemMoved: '{red}You cannot hold that item here, it has been moved out of the way.'
 cleanedOrphanedFields: '{aqua}Cleaned {1.count} orphaned fields'
 cleanedOrphanedUnbreakables: '{aqua}Cleaned {1.count} orphaned unbreakable blocks'
 clearedSnitch: '{aqua}Cleared the snitch list'
@@ -88,7 +85,6 @@ commandCanceled: '{red}You cannot use that command here'
 commandChangeowner: changeowner
 commandClean: clean
 commandClear: clear
-commandContract: contract
 commandCounts: counts
 commandCuboid: cuboid
 commandCuboidClose: close
@@ -102,7 +98,6 @@ commandDisable: disable
 commandDisableall: disableall
 commandEnable: enable
 commandEnableall: enableall
-commandExpand: expand
 commandFields: fields
 commandHide: hide
 commandInfo: info
@@ -130,7 +125,6 @@ commandSetradius: setradius
 commandSetvelocity: setvelocity
 commandSnitch: snitch
 commandSnitchClear: clear
-commandTake: take
 commandToggle: toggle
 commandTranslocation: translocation
 commandTranslocationDelete: delete
@@ -162,11 +156,9 @@ cuboidCannotExtendWG: '{red}Cannot extend inside WorldGuard region'
 cuboidCannotMix: Cannot mix fields that are not in the same mixing group.
 cuboidConflicts: '{red}The cuboid conflicts with someone else''s field'
 cuboidConflictsWG: '{red}The cuboid conflicts with a worldguard region'
-cuboidContracted: '{aqua}The field was contracted.'
 cuboidDrawingMode: '{aqua}자유설정모드를 동작합니다. 원하는구간을 좌클릭하셔서 범위지정후 종료하시려면 Shift+좌클릭 을 해주세요.'
 cuboidExceeds: '{red}보호가능 범위를 초과하셨습니다.'
 cuboidExceedsMax: '{red}보호가능 범위를 초과하셨습니다.'
-cuboidExpanded: '{aqua} he field was expanded.'
 cuboidOutline: '{red}범위밖을 지정할수 없습니다.'
 cuboidReverted: '{aqua}해당블럭이 활성화되지않습니다.'
 cuboidSelectionConflicts: '{red}확장이 불가능합니다.다른사람의 필드가 겹칩니다.''s fields'
@@ -213,18 +205,11 @@ fieldSignCannotChange: '{red}Cannot modify the field while its under rent'
 fieldSignCannotDestroy: '{red}Cannot destroy the field while its under rent or purchase'
 fieldSignCannotDisable: '{red}Cannot disable the field while its under rent'
 fieldSignCannotRentDisabled: '{red}Field has been disabled by owner, come back later'
-fieldSignFieldNotFound: '{red}A field was not found attached to this sign'
-fieldSignInvalidPeriod: '{red}The time period was formatted incorrectly'
 fieldSignItemPaymentReceived: '{yellow}* {aqua}Received {yellow}{1.amount} {2.item} {aqua}payment from {3.player} ({4.field})'
 fieldSignItemPaymentReceivedNoName: '{yellow}* {aqua}Received {yellow}{1.amount} {2.item} {aqua}payment from {3.player}'
 fieldSignMustBeOnField: '{red}Cannot make a field sign that''s not attached to a field'
 fieldSignNoEco: '{red}You must specify an item id in parenthesis'
-fieldSignNoPrice: '{red}The price was formatted incorrectly'
 fieldSignNoTennant: '{red}The field has no tennant'
-fieldSignNotBuyable: '{red}This field does not support buying'
-fieldSignNotOwner: '{red}Only the owner can create Buy/Share/Rent signs'
-fieldSignNotRentable: '{red}This field does not support renting'
-fieldSignNotShareable: '{red}This field does not support sharing'
 fieldSignOnlyOne: '{red}You can only have one field-sign per field'
 fieldSignPaymentReceived: '{yellow}* {aqua}Received {yellow}{1.amount} {aqua}payment from {2.player} ({3.field})'
 fieldSignPaymentReceivedNoName: '{yellow}* {aqua}Received {yellow}{1.amount} {aqua}payment from {2.player}'
@@ -398,11 +383,6 @@ menu60: '{yellow}  /ps rent - Rent the field you are pointing at'
 menu61: '{yellow}  /ps buy - Buy the field you are pointing at'
 menu62: '{dark-red}  /ps clear [flag]{aqua}- Clears flags from field'
 menu63: '{dark-red}  /ps pull - Pull all data from the database'
-menu64: '{yellow}  /ps expand [num] [direction] {aqua}- Expand the cuboid'
-menu65: '{yellow}  /ps expand [u] [d] [n] [s] [e] [w] {aqua}- Expand the cuboid'
-menu66: '{yellow}  /ps contract [num] [direction] {aqua}- Contract the cuboid'
-menu67: '{yellow}  /ps contract [u] [d] [n] [s] [e] [w] {aqua}- Contract the cuboid'
-menu68: '{yellow}  /ps take {aqua}- Breaks the field and puts it in your inventory'
 menu7: '{yellow}  /ps allowed {aqua}- 토지에 권한이부여된 사람목록을 봅니다.'
 menu8: '{yellow}  /ps who {aqua}- 토지안에 현재 누가있는지 봅니다'
 menu9: '{yellow}  /ps counts {aqua}- View your field counts'
@@ -418,7 +398,6 @@ noBlocksMatched: '{red}No blocks matched'
 noChestNextToField: '{red}Cannot place chest next so someone else''s field'
 noConfiscatingBelowField: '{red}Cannot place a confiscating field below a field block'
 noConfiscatingBelowUnbreakable: '{red}Cannot place a confiscating field below an unbreakable'
-noCuboidsFound: '{red}No cuboids found'
 noFieldNearPlayer: '{red}Cannot place field near players'
 noFieldsFound: '{red}주변에 토지를 찾을수없습니다.'
 noFieldsFoundWithFlag: '{aqua}해당 옵션이 된 토지를 찾을수 없습니다.'
@@ -433,7 +412,6 @@ noPermsForAllow: '{red}{1.player} does not have permissions to be allowed'
 noPlaceInWG: '{red}Cannot place field in worldguard regions'
 noPlayersAllowedOnField: '{red}No players allowed in this field'
 noPlayersFoundOnField: '{red}No players found in the field'
-noPositive: '{red}No positive values allowed.'
 noPstonesFound: '{aqua}No field or unbreakable blocks found'
 noSharing: You cannot allow others into this field
 noUnbreakableInsideTranslocation: '{red}Cannot place unbreakable blocks inside translocation fields'
@@ -526,7 +504,6 @@ showProtected: '{white}보호됨'
 showProtectedLocations: '{yellow}{1.field-type}: {aqua}{2.coords}'
 snitchEmpty: '{red}Snitch list is empty'
 surfaceWarning: '{red} You can only place this field on the following blocks: {1.blocks}'
-taken: '{aqua}You have taken the {1.type} field at {2.location}.'
 takenFieldOwnership: '{aqua}You have taken ownership of {1.old-owner}''s field'
 teleportAnnounce: '{aqua}*teleported*'
 teleportAnnounceBack: '{aqua}*You will be teleported back in {1.seconds} seconds*'
