@@ -7,8 +7,8 @@ prism:
     max-idle-connections: 10
     max-wait: 60000
     max-failures-before-wait: 5
-    wait-on-failure-duration: 5
     actions-per-insert-batch: 1000
+    wait-on-failure-duration: 5
     mode: mysql
   mysql:
     hostname: localhost
