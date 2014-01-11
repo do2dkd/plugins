@@ -49,11 +49,15 @@ message-format:
   irc-hero-topic: '&r[&rIRC&r] Topic changed by %NAME%&r: %TOPIC%.'
   titan-chat: '&r[%CHANNEL%&r]<%NAME%&r> %MESSAGE%'
   irc-titan-chat: '&r[&rIRC&r]<%NAME%&r> %MESSAGE%'
-  invalid-irc-command: 
-  no-perm-for-irc-command: 
+  invalid-irc-command: I'm sorry '%NICK%' I can't do that. Type '%CMDPREFIX%help' for a list of commands I might respond to.
+  no-perm-for-irc-command: I'm sorry '%NICK%' you are not authorized to do that. Type '%CMDPREFIX%help' for a list of commands I might respond to.
   rts-notify: '[RTS] <%NAME%> %MESSAGE%'
   irc-hero-channels:
     Global: '&f[G]&f[IRC]%PLAYERPREFIX%%NAME%&f %MESSAGE%'
+  hero-channels:
+    Global: '&r[%CHANNEL%&r]<%NAME%&r> %MESSAGE%'
+  hero-action-channels:
+    Global: '&r[&2%CHANNEL%&r] ***%NAME%&r %MESSAGE%'
   broadcast-message: '[Broadcast] <%NAME%> %MESSAGE%'
   broadcast-console-message: '[Broadcast] <Console> %MESSAGE%'
   default-player-suffix: ''
@@ -62,6 +66,9 @@ message-format:
   default-group-prefix: ''
   default-player-world: world
   default-player-group: ''
+list-format: '&r[&9Minecraft&r] Online (%COUNT%/%MAX%): %PLAYERS%'
+list-separator: '&r, '
+list-player: '%GROUPPREFIX%%NAME%'
 strip-game-colors: false
 strip-irc-colors: false
 custom-tab-list: false
