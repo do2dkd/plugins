@@ -116,6 +116,7 @@ prism:
     item-insert: true
     item-pickup: true
     item-remove: true
+    item-rotate: true
     lava-break: true
     lava-bucket: true
     lava-flow: true
