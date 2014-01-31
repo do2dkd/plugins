@@ -1,2 +1,2 @@
-var dynmapversion = "1.9.1-1832";
+var dynmapversion = "1.9.2-1876";
 

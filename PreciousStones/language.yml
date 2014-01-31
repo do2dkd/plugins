@@ -265,6 +265,8 @@ hasBeenAllowedIn: '{aqua}{1.player} 는{2.count} 에 권한이 부여되었습�
 headerConfiguredFields: '{aqua}{1.field-type}{gray}({2.block-type}) {yellow}id:{white}{3.blockid} {yellow}r:{white}{4.radius}'
 headerConfiguredFields2: '{yellow}h:{white}{1.height}'
 headerConfiguredFields3: '{aqua}{1.field-type} {yellow}id:{white}{2.blockid} {yellow}r:{white}{3.radius} {yellow}v:{white}{4.volume}'
+headerConfiguredFieldsHeight: '{yellow}h:{white}{1.height}'
+headerConfiguredFieldsVolume: '{yellow}v:{white}{1.volume}'
 hideCannot: '{red}이 종류의 토지는 숨김을 지원하지 않습니다.'
 hideHiddenAlready: '{red}이 토지는 이미 숨겨졌습니다.'
 hideHide: '{aqua}토지가 숨겨졌습니다.'

@@ -34,6 +34,7 @@ message-format:
   clever-send: '&r[&4BOT&r]<%NAME%&r> %MESSAGE%'
   mcmmo-admin-chat: '&r[admin:%WORLD%&r]<%NAME%&r> %MESSAGE%'
   mcmmo-party-chat: '&r[party:%PARTY%&r]<%NAME%&r> %MESSAGE%'
+  mcmmo-chat: '&r[mcMMO]<%NAME%&r> %MESSAGE%'
   faction-public-chat: '&r[%FACTIONMODE%] &r[%FACTIONTAG%&r]<%NAME%&r> %MESSAGE%'
   faction-ally-chat: '&r[%FACTIONMODE%] &r[%FACTIONTAG%&r]<%NAME%&r> %MESSAGE%'
   faction-enemy-chat: '&r[%FACTIONMODE%] &r[%FACTIONTAG%&r]<%NAME%&r> %MESSAGE%'
@@ -49,9 +50,17 @@ message-format:
   irc-hero-topic: '&r[&rIRC&r] Topic changed by %NAME%&r: %TOPIC%.'
   titan-chat: '&r[%CHANNEL%&r]<%NAME%&r> %MESSAGE%'
   irc-titan-chat: '&r[&rIRC&r]<%NAME%&r> %MESSAGE%'
+  towny-channel-chat: '&r%TOWNYCHANNELTAG%[%TOWNYCHANNEL%]<%NAME%&r> %MESSAGE%'
   invalid-irc-command: I'm sorry '%NICK%' I can't do that. Type '%CMDPREFIX%help' for a list of commands I might respond to.
   no-perm-for-irc-command: I'm sorry '%NICK%' you are not authorized to do that. Type '%CMDPREFIX%help' for a list of commands I might respond to.
   rts-notify: '[RTS] <%NAME%> %MESSAGE%'
+  rts-complete: '[RTS:Complete] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  rts-claim: '[RTS:Claim] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  rts-unclaim: '[RTS:Unclaim] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  rts-held: '[RTS:Held] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  rts-assign: '[RTS:Assign] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  rts-reopen: '[RTS:Reopen] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  jobs-separator: ', '
   irc-hero-channels:
     Global: '&f[G]&f[IRC]%PLAYERPREFIX%%NAME%&f %MESSAGE%'
   hero-channels:
