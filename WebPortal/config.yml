@@ -1,8 +1,8 @@
-configversion: 1
+configversion: 2
 #Use SQLite or MYSQL
 DataBase:
   # You need to choose if you will use SQLite or Mysql ( default is SQLite )
-  Type: mysql
+  Type: Mysql
 #MySQL config if you will use mysql ( set type to mysql )
 MySQL:
   Host: localhost
@@ -24,13 +24,15 @@ Misc:
   EnableExternalSource: true
   # Put the ip/url address of your host ( external source ) where you put the html folder 
   # ( or * to allow all sources NOT RECOMMENDED )
-  Allow: http://minec.wo.tc/shop/
+  Allow: http://minec.wo.tc/shop
   # Port number for webserver 
   # Check if your host not will block that port
   # Check if your server is not behind firewall
   WebServicePort: 25900
   # Delay for don't allow spam on sign
   SignDelay: 1000
+  # Mailbox delay for spam on mailbox and item don't disappear
+  MailboxDelay: 10000
   # Max Simultaneous Connection the Server Can Hold !
   # This base on WebSite Request
   MaxSimultaneousConnection: 500
@@ -41,11 +43,8 @@ Misc:
   # you set or alter by command /wa set <player> <option> <yes/no>
   OnJoinCheckPermission: false
   # Allow MetaItem Sell
-  # if you enable this the items with
-  # custom meta tag will hold the tag
-  # but this increase amount of query 
-  # need it to make and search the item
-  # Use with caution
+  # if you use 
+  # RPG ITEM 2 turn on
   AllowMetaItem: false
   # Setup your language file xxx.yml on plugins/Webportal folder
   Language: 'eng'
