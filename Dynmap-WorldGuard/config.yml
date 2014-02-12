@@ -24,3 +24,4 @@ ownerstyle:
   kingoftheworld:
     strokecolor: '#C0C0C0'
 maxdepth: 16
+updates-per-tick: 20
