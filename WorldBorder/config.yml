@@ -23,12 +23,12 @@ worlds:
   world_nether:
     x: 0.0
     z: 0.0
-    radiusX: 4500
-    radiusZ: 4500
+    radiusX: 1200
+    radiusZ: 1200
     wrapping: false
   world_the_end:
     x: 0.0
     z: 0.0
-    radiusX: 4500
-    radiusZ: 4500
+    radiusX: 1200
+    radiusZ: 1200
     wrapping: false

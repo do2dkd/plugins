@@ -1,6 +1,10 @@
 permissions:
-  backend: file
+  backend: sql
   backends:
     file:
       file: permissions.yml
+    sql:
+      uri: mysql://localhost/minecraft
+      user: minecraft
+      password: minecraft
   superperms: {}

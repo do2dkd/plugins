@@ -51,6 +51,7 @@ prism:
     max-radius: 100
     default-radius: 10
   ignore:
+    enable-perm-nodes: false
     players-in-creative: true
     players: []
     worlds: []

@@ -1,9 +1,0 @@
-permissions:
-  untrusted: []
-  trusted: []
-  leaders: []
-  clans:
-    clanId:
-    - test.perm
-  '123':
-  - test.test
