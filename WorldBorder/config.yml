@@ -17,18 +17,18 @@ worlds:
   world:
     x: 0.0
     z: 0.0
-    radiusX: 9900
-    radiusZ: 9900
+    radiusX: 2000
+    radiusZ: 2000
     wrapping: false
   world_nether:
     x: 0.0
     z: 0.0
-    radiusX: 1200
-    radiusZ: 1200
+    radiusX: 250
+    radiusZ: 250
     wrapping: false
   world_the_end:
     x: 0.0
     z: 0.0
-    radiusX: 1200
-    radiusZ: 1200
+    radiusX: 1500
+    radiusZ: 1500
     wrapping: false

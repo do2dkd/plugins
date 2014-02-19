@@ -6,7 +6,7 @@ worlds:
     color: WHITE
     style: NORMAL
     pvp: 'true'
-    scale: '1.0'
+    scale: '8.0'
     respawnWorld: ''
     allowWeather: 'true'
     difficulty: HARD
@@ -27,23 +27,23 @@ worlds:
       amount: '0.0'
       currency: '-1'
     hunger: 'true'
-    autoHeal: 'false'
+    autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
+    keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
       yaw: 0.0
       pitch: 0.0
-      z: 5.0
-      y: 64.0
-      x: 3.0
+      z: -2.5
+      y: 60.0
+      x: 8.5
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NETHER
-    seed: '-1965179869288412656'
+    seed: '-905995139'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -76,34 +76,34 @@ worlds:
       currency: '-1'
     hunger: 'true'
     autoHeal: 'true'
-    adjustSpawn: 'false'
+    adjustSpawn: 'true'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
+    keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      yaw: 3.2999928
-      pitch: 62.250023
-      z: -88.88869269303365
-      y: 70.04812487717132
-      x: 450.1202890778197
+      yaw: 0.0
+      pitch: 0.0
+      z: 239.5
+      y: 69.0
+      x: -242.5
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '-1965179869288412656'
+    seed: '-905995139'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
   world_the_end:
     ==: MVWorld
     hidden: 'false'
-    alias: world_the_end
+    alias: ''
     color: WHITE
     style: NORMAL
     pvp: 'true'
-    scale: '1.0'
-    respawnWorld: world
+    scale: '16.0'
+    respawnWorld: ''
     allowWeather: 'true'
     difficulty: HARD
     spawning:
@@ -123,23 +123,23 @@ worlds:
       amount: '0.0'
       currency: '-1'
     hunger: 'true'
-    autoHeal: 'false'
+    autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
+    keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
       yaw: 0.0
       pitch: 0.0
       z: 0.0
-      y: 61.0
+      y: 66.0
       x: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: THE_END
-    seed: '-1965179869288412656'
+    seed: '-905995139'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
