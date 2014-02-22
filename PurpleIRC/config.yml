@@ -7,6 +7,7 @@ message-format:
   console-chat: '&r[&5Server&r] %MESSAGE%'
   game-action: '&r***%NAME%&r %MESSAGE%'
   game-pchat: '&r<%NAME%&r> &r%MESSAGE%'
+  death-messages: '[&2%WORLD%] %MESSAGE%'
   game-pchat-response: ' &6-> &7%TARGET%: &r%MESSAGE%'
   game-chat: '&r<%NAME%&r> &r%MESSAGE%'
   game-death: '&r%MESSAGE%'
@@ -30,6 +31,7 @@ message-format:
   irc-topic: '&r[&r#minec&r] Topic changed by %NAME%&r: %TOPIC%.'
   irc-nickchange: '&r[&r#minec&r] %OLDNICK% is now known as %NEWNICK%.'
   irc-mode: '&r[&r#minec&r] %NAME%&r %MODE% on %CHANNEL%'
+  irc-console-chat: '&f[&5IRC&f]&r<%NAME%> %MESSAGE%'
   irc-notice: '&r[&r#minec&r] [notice(%CHANNEL%)] %NOTICE% '
   clever-send: '&r[&4BOT&r]<%NAME%&r> %MESSAGE%'
   mcmmo-admin-chat: '&r[admin:%WORLD%&r]<%NAME%&r> %MESSAGE%'
@@ -78,6 +80,7 @@ message-format:
 list-format: '&r[&9Minecraft&r] Online (%COUNT%/%MAX%): %PLAYERS%'
 list-separator: '&r, '
 list-player: '%GROUPPREFIX%%NAME%'
+list-sort-by-name: true
 strip-game-colors: false
 strip-irc-colors: false
 custom-tab-list: false

@@ -25,9 +25,8 @@ commandList:
 - KILL
 - JOINS
 - MOVE
-useBetaFunctions: false
 snapshots:
-  enabled: true
+  enabled: false
   timeToLive: 1W
   interval: 1D
   previous: 0
