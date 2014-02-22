@@ -1,2 +1,1 @@
-Welcome {PLAYER} on {SERVER} server
-This server use AuthMe protection!
+{PLAYER}님 {SERVER}서버에 로그인 하신것을 환영합니다.
