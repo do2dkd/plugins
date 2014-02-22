@@ -20,6 +20,7 @@ dynmap/ids-by-ip.txt
 dynmap/hiddenplayers.txt
 dynmap/version.txt
 dynmap/dynmap_access.php
+dynmap/world.pending
 Gringotts/GringottsDB/
 PermissionsEx/includes/
 PluginMetrics/
