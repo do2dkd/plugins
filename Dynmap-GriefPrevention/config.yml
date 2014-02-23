@@ -2,15 +2,12 @@
 update:
   period: 300
 layer:
-  name: GriefPrevention
+  name: 부동산
   hidebydefault: false
   layerprio: 0
   minzoom: 0
 use3dregions: false
-infowindow: '<div class=\"infowindow\">Claim Owner: <span style=\"font-weight:bold;\">%owner%</span><br/>Permission
-  Trust: <span style=\"font-weight:bold;\">%managers%</span><br/>Trust: <span style=\"font-weight:bold;\">%builders%</span><br/>Container
-  Trust: <span style=\"font-weight:bold;\">%containers%</span><br/>Access Trust: <span
-  style=\"font-weight:bold;\">%accessors%</span></div>'
+infowindow: '<div class=\"infowindow\">주인: <span style=\"font-weight:bold;\">%owner%</span><br/>권한 제어 가능: <span style=\"font-weight:bold;\">%managers%</span><br/>건축 가능: <span style=\"font-weight:bold;\">%builders%</span><br/>상자 접근 가능: <span style=\"font-weight:bold;\">%containers%</span><br/>접근 가능: <spanstyle=\"font-weight:bold;\">%accessors%</span></div>'
 adminclaiminfowindow: '<div class=\"infowindow\"><span style=\"font-weight:bold;\">Administrator
   Claim</span><br/>Permission Trust: <span style=\"font-weight:bold;\">%managers%</span><br/>Trust:
   <span style=\"font-weight:bold;\">%builders%</span><br/>Container Trust: <span style=\"font-weight:bold;\">%containers%</span><br/>Access

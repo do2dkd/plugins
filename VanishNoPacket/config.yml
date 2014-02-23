@@ -12,16 +12,16 @@ fakeannounce:
     quit: '%p left the game.'
 hooks:
     essentials: false
-    dynmap: false
-    JSONAPI: false
+    dynmap: true
+    JSONAPI: true
     spoutcraft: false
 checkupdates: true
 permissionsupdates:
     checkonworldchange: false
 effects:
     lightning:
-        count: 30
-colornametags: true
+        count: 1
+colornametags: false
 
 permtest: false
 debug: false
