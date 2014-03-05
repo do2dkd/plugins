@@ -4,7 +4,7 @@ AntiXRay:
   MaximumPoints: 1600
   IgnoreMaxPointsForBlockRatio: true
   ExemptCreativeModePlayers: true
-  NotifyOnMiningLimitReached: ture
+  NotifyOnMiningLimitReached: true
   DefaultMaxHeight: 63
   CustomBlockDefinitions:
     SomeCustomOre:
