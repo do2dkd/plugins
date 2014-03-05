@@ -4,3 +4,4 @@ mysql:
   Database: minecraft
   Username: minecraft
   Password: minecraft
+  Port: '3306'

@@ -503,3 +503,19 @@ Messages:
     Notes: 0:owner of horse
   NoPermission:
     Text: You cannot do that here.
+  ClaimResizeAdmin:
+    Text: Administrator Claim resized.
+  PvPLogAnnouncement:
+    Text: '{0} PvP Logged. I''m sure they won''t miss their stuff...'
+    Notes: 0:Player Name
+  PvPPunishDefenderWarning:
+    Text: '{0} has engaged you in PVP combat! fight or run away, but if you log out
+      while in combat you will lose your inventory!'
+    Notes: 0:player engaging combat
+  PvPPunishAttackerWarning:
+    Text: You have engaged {0} in PVP combat! fight or run away, but if you log out while in combat you will lose your inventory!
+    Notes: 0:player engaging combat
+  PvPLogoutSafely:
+    Text: You are no longer PvP Flagged. You may safely logout.
+  PvPPunished:
+    Text: You have been punished for Logging out during a siege or PvP. You were warned...

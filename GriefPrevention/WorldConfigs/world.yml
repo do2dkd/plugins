@@ -2,7 +2,7 @@ GriefPrevention:
   PvP:
     Enabled: true
     SpawnProtect:
-      Enabled: 'true'
+      Enabled: true
       Timeout: 2400
       DisableonInstigate: true
       DisableonItemPickup: true
@@ -12,14 +12,16 @@ GriefPrevention:
     CombatTimeoutSeconds: 15
     AllowCombatItemDrop: false
     BlockedSlashCommands: /home;/vanish;/spawn;/tpa
+    BlockContainers: true
     ProtectPlayersInLandClaims:
       PlayerOwnedClaims: false
       AdministrativeClaims: false
-    BlockContainers: true
+  Enabled: true
   SeaLevelOverride:
     Enabled: false
-  Enabled: true
+  HorseTrust: Disabled
   SiegeDefendable: RequireOwner
+  MinLavaPlacementDistance: 10
   Claims:
     EntityLimit: 0
     InsufficientSneakResetBound: 0
@@ -92,6 +94,7 @@ GriefPrevention:
     Entity: true
   ClaimCleanup:
     Interval: 300
+    Quantity: 5
     MaximumSize: 25
     MaxInvestmentScore: 100
     Enabled: true
@@ -101,15 +104,17 @@ GriefPrevention:
       Stuck: 0
       Ignore: 0
   CreativeRules: false
+  Trees:
+    CleanupTimeout: 600
+    RemoveFloatingTreetops: true
+    RegrowGriefedTrees: true
   Eavesdrop:
     Enabled: false
     Signs: true
     BookDrop: false
+    Books: true
     WhisperCommands: /tell;/pm;/r
   TrashBlocks: []
-  Trees:
-    RemoveFloatingTreetops: true
-    RegrowGriefedTrees: true
   LimitSkyTrees: true
   AddItemsToClaimedChests: true
   SmartBan: true
@@ -147,14 +152,6 @@ GriefPrevention:
           SiegeAttacker: Allow
           SiegeDefender: Deny
           ClaimControl: RequireBuild
-    SilverfishBreak:
-      Wilderness:
-        AboveSeaLevel: Allow
-        BelowSeaLevel: Allow
-      Claims:
-        AboveSeaLevel: Deny
-        BelowSeaLevel: Deny
-        ClaimControl: Disabled
     BlockPlacement:
       Wilderness:
         AboveSeaLevel: Allow
@@ -177,6 +174,14 @@ GriefPrevention:
         SiegeDefender: Deny
         ClaimControl: RequireBuild
       PVP: Deny
+    SilverfishBreak:
+      Wilderness:
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Allow
+      Claims:
+        AboveSeaLevel: Deny
+        BelowSeaLevel: Deny
+        ClaimControl: Disabled
     FireDestroys:
       Wilderness:
         AboveSeaLevel: Deny
@@ -231,17 +236,16 @@ GriefPrevention:
         BelowSeaLevel: Allow
         SeaLevel: '-1'
         ClaimControl: RequireNone
-    TNTCoalesce:
+    EnderDragonDamage:
       Wilderness:
         AboveSeaLevel: Allow
-        BelowSeaLevel: Allow
+        BelowSeaLevel: Deny
         SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
         SeaLevel: '-1'
-        SiegeBystander: Allow
-        ClaimControl: RequireNone
+        ClaimControl: Disabled
     EnderPortalFill:
       Wilderness:
         AboveSeaLevel: Allow
@@ -272,7 +276,7 @@ GriefPrevention:
         BelowSeaLevel: Allow
         SeaLevel: '-1'
         ClaimControl: RequireBuild
-    OtherExplosions:
+    SpawnEggs:
       Wilderness:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
@@ -281,17 +285,7 @@ GriefPrevention:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
         SeaLevel: '-1'
-        ClaimControl: RequireNone
-    BlockDamageCreeperExplosion:
-      Wilderness:
-        AboveSeaLevel: Allow
-        BelowSeaLevel: Deny
-        SeaLevel: '-1'
-      Claims:
-        AboveSeaLevel: Deny
-        BelowSeaLevel: Deny
-        SeaLevel: '-1'
-        ClaimControl: Disabled
+        ClaimControl: RequireBuild
     BlockDamageWitherExplosions:
       Wilderness:
         AboveSeaLevel: Allow
@@ -302,6 +296,16 @@ GriefPrevention:
         BelowSeaLevel: Deny
         SeaLevel: '-1'
         ClaimControl: Disabled
+    OtherExplosions:
+      Wilderness:
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Allow
+        SeaLevel: '-1'
+      Claims:
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Allow
+        SeaLevel: '-1'
+        ClaimControl: RequireNone
     WitherEating:
       Wilderness:
         AboveSeaLevel: Allow
@@ -312,6 +316,17 @@ GriefPrevention:
         BelowSeaLevel: Deny
         SeaLevel: '-1'
         ClaimControl: Disabled
+    BlockDamageCreeperExplosion:
+      Wilderness:
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Deny
+        SeaLevel: '-1'
+      Claims:
+        AboveSeaLevel: Deny
+        BelowSeaLevel: Deny
+        SeaLevel: '-1'
+        SiegeNonPlayer: Allow
+        ClaimControl: Disabled
     BlockDamageTNTExplosions:
       Wilderness:
         AboveSeaLevel: Allow
@@ -321,6 +336,7 @@ GriefPrevention:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
         SeaLevel: '-1'
+        SiegeNonPlayer: Allow
         ClaimControl: RequireNone
     BlockDamageOtherExplosions:
       Wilderness:
@@ -331,12 +347,14 @@ GriefPrevention:
         AboveSeaLevel: Allow
         BelowSeaLevel: Deny
         SeaLevel: '-1'
+        SiegeNonPlayer: Allow
         ClaimControl: RequireNone
     WaterBuckets:
       Place:
         Wilderness:
           AboveSeaLevel: Deny
           BelowSeaLevel: Allow
+          SeaLevel: '-1'
         Claims:
           AboveSeaLevel: Allow
           BelowSeaLevel: Allow
@@ -359,6 +377,7 @@ GriefPrevention:
           BelowSeaLevel: Allow
           RequiredPermissions:
           - griefprevention.placement.lava
+          SeaLevel: '-1'
         Claims:
           AboveSeaLevel: Allow
           BelowSeaLevel: Allow
@@ -444,6 +463,37 @@ GriefPrevention:
         BelowSeaLevel: Deny
         SeaLevel: '-1'
         ClaimControl: RequireNone
+    VehicleBoarding:
+      Wilderness:
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Allow
+        SeaLevel: '-1'
+      Claims:
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Allow
+        SeaLevel: '-1'
+        ClaimControl: RequireContainer
+    VehiclePlacement:
+      Boat:
+        Wilderness:
+          AboveSeaLevel: Allow
+          BelowSeaLevel: Allow
+          SeaLevel: '-1'
+        Claims:
+          AboveSeaLevel: Allow
+          BelowSeaLevel: Allow
+          SeaLevel: '-1'
+          ClaimControl: RequireBuild
+      Minecart:
+        Wilderness:
+          AboveSeaLevel: Allow
+          BelowSeaLevel: Allow
+          SeaLevel: '-1'
+        Claims:
+          AboveSeaLevel: Allow
+          BelowSeaLevel: Allow
+          SeaLevel: '-1'
+          ClaimControl: RequireBuild
     ZombieDoorBreaking:
       Wilderness:
         AboveSeaLevel: Deny

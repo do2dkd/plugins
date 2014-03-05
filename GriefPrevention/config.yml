@@ -23,6 +23,12 @@ GriefPrevention:
     ClaimBlocksPurchaseCost: 0.0
     ClaimBlocksSellValue: 0.0
   EnableMoveWatcher: false
+  GlobalClaimsEnabled: true
+  GlobalPVPEnabled: true
+  GlobalSiegeEnabled: true
+  GlobalSpamEnabled: true
+  AllowAutomaticMigration: true
+  DisabledCommands: []
   Siege:
     CooldownTime: 3600000
   WorldConfig:

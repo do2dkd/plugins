@@ -62,6 +62,7 @@ message-format:
   rts-held: '[RTS:Held] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
   rts-assign: '[RTS:Assign] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
   rts-reopen: '[RTS:Reopen] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
+  dynmap-web-chat: '[Dynmap] <%NAME%> %MESSAGE%'
   jobs-separator: ', '
   irc-hero-channels:
     Global: '&f[G]&f[IRC]%PLAYERPREFIX%%NAME%&f %MESSAGE%'
