@@ -1,12 +1,9 @@
 Messages:
   AbandonClaimAdvertisement:
-    #Text: To delete another claim and free up some blocks, use /AbandonClaim.
     Text: 부동산을 삭제하여 가질 수 있는 부동산 총 수치를 확보하고 싶으면 /AbandonClaim 를 사용하세요.
   AbandonClaimMissing:
-    #Text: Stand in the claim you want to delete, or consider /AbandonAllClaims.
     Text: 자신의 부동산 안에서만 삭제가 가능합니다. 혹은 /AbandonAllClaims 를 사용 해서 모든 부동산을 삭제하세요.
   AbandonClaimRestoreWarning:
-    #Text: Abandoning this claim will restore nature! If you still want to abandon it, use /abandonclaim again.
     Text: Abandoning this claim will restore nature! If you still want to abandon it, use /abandonclaim again.
   AbandonCost:
     Text: you lose {0} Claim blocks from abandoning this claim.
