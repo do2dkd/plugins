@@ -7,7 +7,7 @@ worlds:
     style: NORMAL
     pvp: 'true'
     scale: '8.0'
-    respawnWorld: ''
+    respawnWorld: 'world_nether'
     allowWeather: 'true'
     difficulty: HARD
     spawning:

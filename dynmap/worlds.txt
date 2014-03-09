@@ -176,3 +176,5 @@ worlds:
         lighting: default
         #Biome-based coloring : biome=biome type, temperature=biome-temperature, rainfall=biome-rainfall
         biomecolored: biome
+  - name: resource_n
+    enabled: false
