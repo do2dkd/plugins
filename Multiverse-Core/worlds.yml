@@ -72,7 +72,7 @@ worlds:
         exceptions: []
     entryfee:
       ==: MVEntryFee
-      amount: '0.0'
+      amount: '0.3'
       currency: '-1'
     hunger: 'true'
     autoHeal: 'true'
