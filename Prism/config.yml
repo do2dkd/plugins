@@ -54,7 +54,7 @@ prism:
     enable-perm-nodes: false
     players-in-creative: true
     players: []
-    worlds: []
+    worlds: resource
   db-records-purge-rules:
   - before:4w
   - a:water-flow before:2w

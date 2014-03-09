@@ -162,3 +162,17 @@ worlds:
     enabled: false
   - name: world_the_end
     enabled: false
+  - name: resource
+    title: "Resource"
+    enabled: true
+    bigworld: true
+    maps:
+      - class: org.dynmap.hdmap.HDMap
+        name: biome
+        title: "Biome"
+        prefix: b
+        perspective: iso_S_90_lowres
+        shader: biome
+        lighting: default
+        #Biome-based coloring : biome=biome type, temperature=biome-temperature, rainfall=biome-rainfall
+        biomecolored: biome
