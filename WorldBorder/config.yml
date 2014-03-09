@@ -24,8 +24,8 @@ worlds:
   world_nether:
     x: 0.0
     z: 0.0
-    radiusX: 1000
-    radiusZ: 1000
+    radiusX: 250
+    radiusZ: 250
     wrapping: false
   world_the_end:
     x: 0.0
