@@ -6,7 +6,7 @@
 require_once('libs/Peregrine.php');
 require_once('libs/Auth.php');
 require_once('libs/Prism.php');
-define('WEB_UI_VERSION', 'v1.0.1-1-gd6daf1f');
+define('WEB_UI_VERSION', 'v2.0');
 define('WEB_UI_DEBUG', false);
 
 
@@ -26,14 +26,9 @@ define("MYSQL_PASSWORD", "minecraft");
 define("MYSQL_DATABASE", "minecraft");
 define("MYSQL_PORT", 3306);
 
-// Whether or not to sort records with the most recent at top.
-// If you often run searches that include a very large (50k+)
-// data set, you should disable this because it's very costly
-// in query time.
-// Example:
-//   Paginating 1.9 million results takes 26ms with this off
-//   It takes 7.8 seconds with it on.
-define("SORT_TIME_DESC", false);
+// Default MySQL query sorting
+define("DEFAULT_ORDER_BY", '');
+// Ex: 'id DESC' for most recent actions on the top
 
 // ------------------------------------------
 // TIMEZONE
@@ -48,6 +43,8 @@ define("SORT_TIME_DESC", false);
 // http://php.net/manual/en/timezones.php
 date_default_timezone_set('America/Los_Angeles');
 
+// Default format of action dates in display
+define("DEFAULT_DATE_FORMAT", 'Y-m-d H:i:s');
 
 // NOTICE:
 //

@@ -1,32 +1,59 @@
-$(function(){
-    $('#frm-search').submit(function(){
-        $('.table tbody td').remove();
-        $('#loading').show();
-        $.post('query.php', $(this).serialize(), function(resp){
+
+prismWebUi = function(){
+
+    var form = $('#frm-search');
+    var tbody = $('.table tbody');
+    var loading = $('#loading');
+    var ol = $('.meta ol');
+    var curr_page_li = $('#curr_page');
+    var tmpl_action_row = $('#action-row').html();
+
+    $('#submit').click(function(){
+        curr_page_li.val( 1 );
+    });
+
+    $('#set-per-page').change(function(){
+        $('#per_page').val( $(this).val() );
+        form.submit();
+    })
+
+    ol.on('click', 'li a', function(e){
+        e.preventDefault();
+        curr_page_li.val( $(this).data('page') );
+        form.submit();
+        return false;
+    });
+
+    $('.modal .btn').click(function(){
+        $('#frm-login').submit();
+        return false;
+    });
+
+    // Util methods
+    ajaxStart = function(){
+        loading.show();
+    }
+    ajaxStop = function(){
+        loading.hide();
+    }
+    clearTable = function(){
+        tbody.html('');
+    }
+
+
+    // Event handlers
+    handleSubmit = function(){
+
+        ajaxStart();
+        clearTable();
+
+        var jqXHR = $.post('query.php', $(this).serialize(), function(resp){
             if(resp.results.length > 0){
-                $('#loading').hide();
-                for(r in resp.results){
+                
+                ajaxStop();
 
-                    data = resp.results[r].data;
-
-                    if( typeof resp.results[r].data === "object" && resp.results[r].data != null ){;
-                        data = "";
-                        $.each(resp.results[r].data, function(k,v){
-                            data += k + ": " + v + "<br/>";
-                        });
-                    }
-
-                    var tr = '<tr>';
-                    tr += '<td>'+resp.results[r].world+'</td>';
-                    tr += '<td>'+resp.results[r].x+' '+resp.results[r].y+' '+resp.results[r].z+'</td>';
-                    tr += '<td>'+resp.results[r].action_type+'</td>';
-                    tr += '<td>'+resp.results[r].player+'</td>';
-                    tr += '<td>'+(data === null ? '' : data)+'</td>';
-                    tr += '<td>'+resp.results[r].action_time+'</td>';
-                    tr += '</tr>'
-
-                    $('.table tbody').append(tr);
-                }
+                // Build data, append view
+                tbody.html( _.template(tmpl_action_row,{actions:resp.results}) );
 
                 // Set meta
                 $('.meta span:first-child').text(resp.total_results);
@@ -34,7 +61,6 @@ $(function(){
                 $('.meta span:nth-child(3)').text(resp.pages);
 
                 // Pagination
-                var ol = $('.meta ol');
                 ol.empty();
 
                 if(resp.pages > 1 && resp.curr_page > 1){
@@ -86,34 +112,47 @@ $(function(){
                 }
 
             } else {
-                $('#loading').hide();
-                $('table tbody').append('<tr><td colspan="6">No results found. Try again.</td></tr>')
+                ajaxStop();
+                tbody.append('<tr><td colspan="7">No results found. Try again.</td></tr>')
             }
         }, 'json');
+
+        jqXHR.fail(function(){
+
+            var msg = "<p><strong>Error returning results:</strong></p>";
+            msg += "<p>The Ajax request failed.</p>";
+            msg += "<p>Make sure WEB_UI_DEBUG is turned off in the config.php file. Otherwise, if you're unsure how to resolve this error please contact Prism support.</p>";
+            msg += "<p><strong>HTTP Status:</strong> "+jqXHR.status+" "+jqXHR.statusText+"</p>";
+            msg += "<p><strong>Response Text:</strong> "+jqXHR.responseText+"</p>";
+
+            ajaxStop();
+            tbody.append('<tr><td colspan="7">'+msg+'</td></tr>')
+
+        });
+
         return false;
-    });
 
-    $('#submit').click(function(){
-        $('#curr_page').val( 1 );
-    });
+    }
 
-    $('#set-per-page').change(function(){
-        $('#per_page').val( $(this).val() );
-        $('#frm-search').submit();
-    })
 
-    $('.meta ol').delegate('li a', 'click', function(e){
-        e.preventDefault();
-        $('#curr_page').val( $(this).data('page') );
-        $('#frm-search').submit();
-        return false;
-    });
+    // Event Listeners
+    form.submit(handleSubmit);
 
-    $('.modal .btn').click(function(){
-        $('#frm-login').submit();
-        return false;
-    });
+
+    // Return
+    return {
+
+        // @todo future api methods
+
+    }
+}
+
+
+$(function(){
+    var prism = prismWebUi();
 });
+
+
 
 /* Multi-select type-ahead */
 function extractor(query) {
