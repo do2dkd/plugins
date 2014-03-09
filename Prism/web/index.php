@@ -157,6 +157,7 @@ if(!$peregrine->post->isEmpty('username')){
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>World</th>
                                     <th>Loc</th>
                                     <th>Action</th>
@@ -166,7 +167,7 @@ if(!$peregrine->post->isEmpty('username')){
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td colspan="6">Awaiting search.</td></tr>
+                                <tr><td colspan="7">Awaiting search.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -209,6 +210,7 @@ if(!$peregrine->post->isEmpty('username')){
         </div>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/underscore.js"></script>
         <script src="js/app.js"></script>
         <script>
             $('#actions').typeahead({
@@ -228,6 +230,19 @@ if(!$peregrine->post->isEmpty('username')){
                 backdrop: 'static'
             });
             <?php endif; ?>
+        </script>
+        <script type="text/html" id="action-row">
+            <% _.each(actions,function(a,key,list){ %>
+                <tr>
+                    <td><%= a.id %></td>
+                    <td><%= a.world %></td>
+                    <td><%= a.x %> <%= a.y %> <%= a.z %></td>
+                    <td><%= a.action %></td>
+                    <td><%= a.player %></td>
+                    <td><%= a.data %></td>
+                    <td><%= a.epoch %></td>
+                </tr>
+            <% }); %>
         </script>
     </body>
 </html>
