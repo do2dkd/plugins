@@ -1,10 +1,10 @@
 AntiXRay:
   NewPlayerStartingPoints: -400
-  PointsEarnedPerHourPlayed: 800
-  MaximumPoints: 1600
+  PointsEarnedPerHourPlayed: 1800
+  MaximumPoints: 5000
   IgnoreMaxPointsForBlockRatio: true
   ExemptCreativeModePlayers: true
-  NotifyOnMiningLimitReached: false
+  NotifyOnMiningLimitReached: true
   DefaultMaxHeight: 63
   CustomBlockDefinitions:
     SomeCustomOre:

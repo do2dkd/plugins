@@ -26,7 +26,6 @@ low-priority-command-registration: false
 # or aliases (automatically added to the list by CommandBook) can be used as component names.
 components:
     disabled:
-    - freeze
     - help
     enabled:
     - bans
@@ -50,6 +49,7 @@ components:
     - player
     - god
     - flight
+    - freeze
 
 # Configurations for CommandBook's built-in components are stored here.
 # Custom component configurations are stored as individual files in the the config/ folder

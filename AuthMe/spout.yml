@@ -1,4 +1,4 @@
-Spout GUI enabled: true
+Spout GUI enabled: false
 LoginScreen:
   enabled: true
   exit button: Quit

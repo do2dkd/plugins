@@ -1,1 +1,1 @@
-{PLAYER}님 {SERVER}서버에 로그인 하신것을 환영합니다.
+{PLAYER}님 {SERVER}에 로그인 하신것을 환영합니다.
