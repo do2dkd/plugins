@@ -4,7 +4,7 @@ GriefPrevention:
   DataStore: mysql
   DebugLevel: None
   Claims:
-    MaxAccruedBlocks: 5000
+    MaxAccruedBlocks: 10000
     AutoSubClaimsSwitch: false
     DeleteWithUnrecognizedOwner: false
     InitialBlocks: 100

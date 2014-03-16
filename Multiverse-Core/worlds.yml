@@ -2,12 +2,12 @@ worlds:
   resource_n:
     ==: MVWorld
     hidden: 'false'
-    alias: ''
+    alias: resource_n
     color: WHITE
     style: NORMAL
     pvp: 'true'
     scale: '8.0'
-    respawnWorld: 'world_nether'
+    respawnWorld: world_nether
     allowWeather: 'true'
     difficulty: HARD
     spawning:
@@ -133,7 +133,7 @@ worlds:
       yaw: 0.0
       pitch: 0.0
       z: 61.5
-      y: 64.0
+      y: 64.5
       x: 68.5
     autoLoad: 'true'
     bedRespawn: 'true'
