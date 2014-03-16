@@ -8,6 +8,7 @@ prism:
     max-wait: 60000
     max-failures-before-wait: 5
     actions-per-insert-batch: 1000
+    force-write-queue-on-shutdown: true
     wait-on-failure-duration: 5
     mode: mysql
   mysql:
@@ -16,6 +17,10 @@ prism:
     password: minecraft
     database: minecraft
     port: '3306'
+  paste:
+    enable: false
+    username: Username on http://pste.me/#/signup
+    api-key: API key from http://pste.me/#/account
   wands:
     default-mode: hand
     default-item-mode-id: '280:0'
@@ -171,6 +176,7 @@ prism:
     - login
   alerts:
     alert-staff-to-applied-process: true
+    alert-player-about-self: true
     ores:
       enabled: true
       log-to-console: true
