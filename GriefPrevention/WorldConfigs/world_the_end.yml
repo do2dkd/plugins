@@ -26,7 +26,7 @@ GriefPrevention:
     EntityLimit: 0
     InsufficientSneakResetBound: 0
     SiegeTamedAnimalDistance: 20
-    Enabled: true
+    Enabled: false
     MaxClaimBlocks: 0
     BlocksAccruedPerHour: 100.0
     AbandonReturnRatio: 1.0
