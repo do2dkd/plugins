@@ -1,8 +1,8 @@
 update-events:
   - quit
-serverID: 'MyServer'
+serverID: 'semaul'
 database:
-  url: 'jdbc:mysql://localhost:3306/mydb?user=root&password=asdf'
+  url: 'jdbc:mysql://localhost:3306/mydb?user=minecwotc&password=minecwotc'
   handler: 'tk.manf.InventorySQL.database.handler.MySQLDatabaseHandler'
 data:
   serializer: 'tk.manf.InventorySQL.datahandling.serializer.SimpleSerializer'
