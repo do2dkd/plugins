@@ -471,8 +471,8 @@ GriefPrevention:
         ClaimControl: RequireBuild
     VillagerTrading:
       Wilderness:
-        AboveSeaLevel: Deny
-        BelowSeaLevel: Deny
+        AboveSeaLevel: Allow
+        BelowSeaLevel: Allow
         SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Allow
