@@ -2,7 +2,7 @@ update-events:
   - quit
 serverID: 'semaul'
 database:
-  url: 'jdbc:mysql://localhost:3306/mydb?user=minecwotc&password=minecwotc'
+  url: 'jdbc:mysql://localhost:3306/mydb?user=minecraft&password=minecraft'
   handler: 'tk.manf.InventorySQL.database.handler.MySQLDatabaseHandler'
 data:
   serializer: 'tk.manf.InventorySQL.datahandling.serializer.SimpleSerializer'
