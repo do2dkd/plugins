@@ -16,20 +16,26 @@ press TAB. Visit
 for a list of possible entities (creatures) which can be spawned.
 
 ***/
-var entities = [];
-var Types = org.bukkit.entity.EntityType
-for (var t in Types){
-    if (Types[t] && Types[t].ordinal){
-        entities.push(t);
-    }
+var entities = [],
+  bkEntityType = org.bukkit.entity.EntityType;
+
+var entitytypes = bkEntityType.values();
+for ( var t in entitytypes ) {
+  if ( entitytypes[t] && entitytypes[t].ordinal ) { 
+    entities.push(entitytypes[t].name());
+  }
 }
-command('spawn', function(parameters, sender){
-    if (!sender.op){
-        sender.sendMessage('Only operators can perform this command');
-        return;
-    }
-    var location = sender.location;
-    var world = location.world;
-    var type = ('' + parameters[0]).toUpperCase();
-    world.spawnEntity(location, org.bukkit.entity.EntityType[type]);
-},entities);
+command( 'spawn', function( parameters, sender ) {
+  if ( !sender.op ) {
+    sender.sendMessage( 'Only operators can perform this command' );
+    return;
+  }
+  var location = sender.location;
+  if ( !location ) {
+    sender.sendMessage( 'You have no location. This command only works in-game.' );
+    return;
+  }
+  var world = location.world;
+  var type = ('' + parameters[0]).toUpperCase();
+  world.spawnEntity( location, bkEntityType[type] );
+}, entities );

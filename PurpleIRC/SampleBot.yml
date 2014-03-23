@@ -1,6 +1,7 @@
 # Sample PurpleIRC bot configuration.
 # Most of these options should be self explanatory.
 # Place your bot file in the PurpleIRC/bots/ folder.
+# NOTE: If you make changes to this file while the server is running use "/irc reloadbotconfigs" to load the changes into memory.
 #
 # nick - Your bot's unique nickname
 nick: AwesomeBot
@@ -70,8 +71,15 @@ channels:
     topic: New topic
     # topic-protect - Prevent others from changing the topic
     topic-protect: false    
+    # Enable chanserve mode for topic set command (/msg chanserv topic #channel <topic>
+    topic-chanserv: false
     # If the Shortify plugin is installed then shoten URLs sent from IRC
     shortify: true
+    # Enable or disable message filtering
+    enable-filtering: false
+    # Filters. These wll be removed from IRC to game messages.
+    filter-list: 
+       - AwesomeBot
     # enabled-messages - These are the message types that are either sent to the game or IRC
     # config.yml. Remove or comment the messages you don't want.       
     enabled-messages:
@@ -98,8 +106,10 @@ channels:
     - irc-mode
     - irc-notice
     #- irc-console-chat
-    # Dynmap Web Chat
+    # Dynmap Web Chat to IRC
     - dynmap-web-chat
+    # IRC to Dynmap Web Chat
+    #- irc-dynmap-web-chat
     # mcMMO messages sent to IRC
     - mcmmo-admin-chat
     - mcmmo-party-chat
@@ -128,6 +138,8 @@ channels:
     #- irc-hero-topic
     # CleverNotch bot messages will be sent to the IRC channel
     - clever-chat
+    # OreBroadcast messages
+    #- ore-broadcast
     - titan-chat
     - towny-chat
     # Specific TownyChat channel or tag
@@ -142,6 +154,8 @@ channels:
     #- broadcast-message
     # Hero channel destination for IRC messages
     hero-channel: admin
+    # Towny channel destination for IRC messages
+    towny-channel: irc
     # Log all messages from IRC to HeroChat
     log-irc-to-hero-chat: false
     # ops - IRC hostname mask styled ops list
@@ -177,6 +191,9 @@ channels:
     invalid-command:
         private: false
         ctcp: false
+    # Raw message to send if raw-message-on-join is true
+    raw-message: ''
+    raw-message-on-join: false
     commands:
       chat:
         modes: '*'

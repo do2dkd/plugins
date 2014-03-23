@@ -1,4 +1,8 @@
 'use strict';
+var File = java.io.File,
+  bkBukkit = org.bukkit.Bukkit,
+  bkLocation = org.bukkit.Location,
+  bkBlockCommandSender = org.bukkit.command.BlockCommandSender;
 /************************************************************************
 ## Utilities Module
 
@@ -22,32 +26,34 @@ String, then it tries to find the player with that name.
 
 #### Example
 
-    var utils = require('utils');
-    var name = 'walterh';
-    var player = utils.player(name);
-    if (player) {
-        player.sendMessage('Got ' + name);
-    }else{
-        console.log('No player named ' + name);
-    }
+```javascript
+var utils = require('utils');
+var name = 'walterh';
+var player = utils.player(name);
+if ( player ) {
+    player.sendMessage('Got ' + name);
+} else {
+    console.log('No player named ' + name);
+}
+```
 
 [bkpl]: http://jd.bukkit.org/dev/apidocs/org/bukkit/entity/Player.html
 [bkloc]: http://jd.bukkit.org/dev/apidocs/org/bukkit/Location.html
 
 ***/
 var _player = function ( playerName ) {
-    if (typeof playerName == 'undefined'){
-        if (typeof self == 'undefined'){
-            return null;
-        } else { 
-            return self;
-        }
-    } else {
-        if (typeof playerName == 'string')
-            return org.bukkit.Bukkit.getPlayer(playerName);
-        else
-            return playerName; // assumes it's a player object
+  if ( typeof playerName == 'undefined' ) {
+    if ( typeof self == 'undefined' ) {
+      return null;
+    } else { 
+      return self;
     }
+  } else {
+    if ( typeof playerName == 'string' )
+      return bkBukkit.getPlayer( playerName );
+    else
+      return playerName; // assumes it's a player object
+  }
 };
 /*************************************************************************
 ### utils.locationToJSON() function
@@ -73,15 +79,15 @@ This can be useful if you write a plugin that needs to store location data since
 A JSON object in the above form.
  
 ***/
-var _locationToJSON = function(location){
-    return { 
-        world: ''+location.world.name, 
-        x: location.x, 
-        y: location.y, 
-        z: location.z, 
-        yaw: location.yaw,
-        pitch: location.pitch
-    };
+var _locationToJSON = function( location ) {
+  return { 
+    world: ''+location.world.name, 
+    x: location.x, 
+    y: location.y, 
+    z: location.z, 
+    yaw: location.yaw,
+    pitch: location.pitch
+  };
 };
 /*************************************************************************
 ### utils.locationToString() function
@@ -95,15 +101,17 @@ The utils.locationToString() function returns a
 keys in a lookup table.
 
 #### Example
-    
-    var utils = require('utils');
-    ...
-    var key = utils.locationToString(player.location);
-    lookupTable[key] = player.name;
+
+```javascript    
+var utils = require('utils');
+...
+var key = utils.locationToString(player.location);
+lookupTable[key] = player.name;
+```
 
 ***/
-exports.locationToString = function(location){
-    return JSON.stringify(_locationToJSON(location));
+exports.locationToString = function( location ) {
+  return JSON.stringify( _locationToJSON( location ) );
 };
 exports.locationToJSON = _locationToJSON;
 
@@ -117,21 +125,23 @@ returned by locationToJSON() and reconstructs and returns a bukkit
 Location object.
 
 ***/
-exports.locationFromJSON = function(json){
-    if (json.constuctor == Array){ 
-        // for support of legacy format
-        var world = org.bukkit.Bukkit.getWorld(json[0]);
-        return new org.bukkit.Location(world, json[1], json[2] , json[3]);
-    }else{
-        var world = org.bukkit.Bukkit.getWorld(json.world);
-        return new org.bukkit.Location(world, json.x, json.y , json.z, json.yaw, json.pitch);
-    }
+exports.locationFromJSON = function( json ) {
+  var world;
+  if ( json.constuctor == Array ) { 
+    // for support of legacy format
+    world = bkBukkit.getWorld( json[0] );
+    return new bkLocation( world, json[1], json[2] , json[3] );
+  } else {
+    world = bkBukkit.getWorld( json.world );
+    return new bkLocation( world, json.x, json.y , json.z, json.yaw, json.pitch );
+  }
 };
 
 exports.player = _player;
-exports.getPlayerObject = function(player){
-    console.warn('utils.getPlayerObject() is deprecated. Use utils.player() instead.');
-    return _player(player);
+
+exports.getPlayerObject = function( player ) {
+  console.warn( 'utils.getPlayerObject() is deprecated. Use utils.player() instead.' );
+  return _player(player);
 };
 /*************************************************************************
 ### utils.getPlayerPos() function
@@ -153,15 +163,14 @@ An [org.bukkit.Location][bkloc] object.
 [bksndr]: http://jd.bukkit.org/dev/apidocs/index.html?org/bukkit/command/CommandSender.html
 ***/
 exports.getPlayerPos = function( player ) {
-    player = _player(player);
-    if (player){
-        if (player instanceof org.bukkit.command.BlockCommandSender)
-            return player.block.location;
-        else
-            return player.location;
-    }
+  player = _player( player );
+  if ( player ) {
+    if ( player instanceof bkBlockCommandSender )
+      return player.block.location;
     else
-        return null;
+      return player.location;
+  } 
+  return null;
 };
 /************************************************************************
 ### utils.getMousePos() function
@@ -178,27 +187,31 @@ is the location of the block the player is looking at (targeting).
 
 The following code will strike lightning at the location the player is looking at...
 
-    var utils = require('utils');
-    var playerName = 'walterh';
-    var targetPos = utils.getMousePos(playerName);
-    if (targetPos){
-       targetPos.world.strikeLightning(targetPos);
-    }
+```javascript
+var utils = require('utils');
+var playerName = 'walterh';
+var targetPos = utils.getMousePos(playerName);
+if (targetPos){
+   targetPos.world.strikeLightning(targetPos);
+}
+```
 
 ***/
-exports.getMousePos = function (player) {
-    
-    player = _player(player);
-    if (!player)
-        return null;
-    // player might be CONSOLE or a CommandBlock
-    if (!player.getTargetBlock)
-        return null;
-    var targetedBlock = player.getTargetBlock(null,5);
-    if (targetedBlock == null || targetedBlock.isEmpty()){
-        return null;
-    }
-    return targetedBlock.location;
+exports.getMousePos = function( player ) {
+  
+  player = _player(player);
+  if ( !player ) {
+    return null;
+  }
+  // player might be CONSOLE or a CommandBlock
+  if ( !player.getTargetBlock ) {
+    return null;
+  }
+  var targetedBlock = player.getTargetBlock( null, 5 );
+  if ( targetedBlock == null || targetedBlock.isEmpty() ) {
+    return null;
+  }
+  return targetedBlock.location;
 };
 /************************************************************************
 ### utils.foreach() function
@@ -228,7 +241,7 @@ package for scheduling processing of arrays.
    - object : Additional (optional) information passed into the foreach method.
    - array : The entire array.
 
- * object (optional) : An object which may be used by the callback.
+ * context (optional) : An object which may be used by the callback.
  * delay (optional, numeric) : If a delay is specified (in ticks - 20
    ticks = 1 second), then the processing will be scheduled so that
    each item will be processed in turn with a delay between the completion of each
@@ -248,58 +261,70 @@ and put the code there.
 
 The following example illustrates how to use foreach for immediate processing of an array...
 
-    var utils = require('utils');
-    var players = ['moe', 'larry', 'curly'];
-    utils.foreach (players, function(item){ 
-        server.getPlayer(item).sendMessage('Hi ' + item);
-    });
+```javascript
+var utils = require('utils');
+var players = ['moe', 'larry', 'curly'];
+utils.foreach (players, function(item){ 
+    server.getPlayer(item).sendMessage('Hi ' + item);
+});
+```
 
 ... The `utils.foreach()` function can work with Arrays or any Java-style collection. This is important
 because many objects in the Bukkit API use Java-style collections...
 
-    utils.foreach( server.onlinePlayers, function(player){
-         player.chat('Hello!');
-    }); 
+```javascript
+utils.foreach( server.onlinePlayers, function(player){
+    player.chat('Hello!');
+}); 
+```
 
 ... the above code sends a 'Hello!' to every online player.
 
 The following example is a more complex use case - The need to build an enormous structure
 without hogging CPU usage...
 
-    // build a structure 200 wide x 200 tall x 200 long
-    // (That's 8 Million Blocks - enough to tax any machine!)
-    var utils = require('utils');
+```javascript
+// build a structure 200 wide x 200 tall x 200 long
+// (That's 8 Million Blocks - enough to tax any machine!)
+var utils = require('utils');
 
-    var a = []; 
-    a.length = 200; 
-    var drone = new Drone();
-    var processItem = function(item, index, object, array){
-        // build a box 200 wide by 200 long then move up
-        drone.box(blocks.wood, 200, 1, 200).up();
-    };
-    // by the time the job's done 'self' might be someone else 
-    // assume this code is within a function/closure
-    var player = self;
-    var onDone = function(){ 
-        player.sendMessage('Job Done!');
-    };
-    utils.foreach (a, processItem, null, 10, onDone);
+var a = []; 
+a.length = 200; 
+var drone = new Drone();
+var processItem = function(item, index, object, array){
+    // build a box 200 wide by 200 long then move up
+    drone.box(blocks.wood, 200, 1, 200).up();
+};
+// by the time the job's done 'self' might be someone else 
+// assume this code is within a function/closure
+var player = self;
+var onDone = function(){ 
+    player.sendMessage('Job Done!');
+};
+utils.foreach (a, processItem, null, 10, onDone);
+```
     
 ***/
-var _foreach = function(array, callback, object, delay, onCompletion) {
-    if (array instanceof java.util.Collection)
-        array = array.toArray();
-    var i = 0;
-    var len = array.length;
-    if (delay){
-        var next = function(){ callback(array[i],i,object,array); i++;};
-        var hasNext = function(){return i < len;};
-        _nicely(next,hasNext,onCompletion,delay);
-    }else{
-        for (;i < len; i++){
-            callback(array[i],i,object,array);
-        }
+var _foreach = function( array, callback, context, delay, onCompletion ) {
+  if ( array instanceof java.util.Collection ) {
+    array = array.toArray();
+  }
+  var i = 0;
+  var len = array.length;
+  if ( delay ) {
+    var next = function( ) { 
+      callback(array[i], i, context, array); 
+      i++;
+    };
+    var hasNext = function( ) {
+      return i < len;
+    };
+    _nicely( next, hasNext, onCompletion, delay );
+  } else {
+    for ( ;i < len; i++ ) {
+      callback( array[i], i, context, array );
     }
+  }
 };
 exports.foreach = _foreach;
 /************************************************************************
@@ -327,16 +352,17 @@ function and the start of the next `next()` function.
 See the source code to utils.foreach for an example of how utils.nicely is used.
 
 ***/
-var _nicely = function(next, hasNext, onDone, delay){
-    if (hasNext()){
-        next();
-        server.scheduler.runTaskLater(__plugin,function(){
-            _nicely(next,hasNext,onDone,delay);
-        },delay);
-    }else{
-        if (onDone)
-            onDone();
+var _nicely = function( next, hasNext, onDone, delay ) {
+  if ( hasNext() ){
+    next();
+    server.scheduler.runTaskLater( __plugin, function() {
+      _nicely( next, hasNext, onDone, delay );
+    }, delay );
+  }else{
+    if ( onDone ) {
+      onDone();
     }
+  }
 };
 exports.nicely = _nicely;
 /************************************************************************
@@ -356,38 +382,40 @@ The utils.at() function will perform a given task at a given time every
 
 To warn players when night is approaching...
 
-    var utils = require('utils');
+```javascript
+var utils = require('utils');
 
-    utils.at( '19:00', function() {
+utils.at( '19:00', function() {
 
-        utils.foreach( server.onlinePlayers, function(player){
-            player.chat('The night is dark and full of terrors!');            
-        });
-
+    utils.foreach( server.onlinePlayers, function( player ) {
+        player.chat( 'The night is dark and full of terrors!' );
     });
+
+});
+```
   
 ***/
-exports.at = function(time24hr, callback, worlds) {
-    var forever = function(){ return true;};
-    var timeParts = time24hr.split(':');
-    var hrs = ((timeParts[0] * 1000) + 18000) % 24000;
-    var mins;
-    if (timeParts.length > 1)
-        mins = (timeParts[1] / 60) * 1000;
-    
-    var timeMc = hrs + mins;
-    if (typeof worlds == 'undefined'){
-        worlds = server.worlds;
-    }
-    _nicely(function(){
-        _foreach (worlds, function (world){
-            var time = world.getTime();
-            var diff = timeMc - time;
-            if (diff > 0 && diff < 100){
-                callback();
-            }
-        });
-    },forever, null, 100);
+exports.at = function( time24hr, callback, worlds ) {
+  var forever = function(){ return true; };
+  var timeParts = time24hr.split( ':' );
+  var hrs = ( (timeParts[0] * 1000) + 18000 ) % 24000;
+  var mins;
+  if ( timeParts.length > 1 ) {
+    mins = ( timeParts[1] / 60 ) * 1000;
+  }
+  var timeMc = hrs + mins;
+  if ( typeof worlds == 'undefined' ) {
+    worlds = server.worlds;
+  }
+  _nicely( function() {
+    _foreach( worlds, function ( world ) {
+      var time = world.getTime();
+      var diff = timeMc - time;
+      if ( diff > 0 && diff < 100 ) {
+        callback();
+      }
+    });
+  }, forever, null, 100 );
 };
 
 /************************************************************************
@@ -405,31 +433,127 @@ a given directory and recursiving trawling all sub-directories.
 
 #### Example
 
-    var utils = require('utils');
-    var jsFiles = utils.find('./', function(dir,name){
-        return name.match(/\.js$/);
-    });  
+```javascript
+var utils = require('utils');
+var jsFiles = utils.find('./', function(dir,name){
+    return name.match(/\.js$/);
+});  
+```
 
 ***/
-exports.find = function( dir , filter){
-    var result = [];
-    var recurse = function(dir, store){
-        var files, dirfile = new java.io.File(dir);
-        
-        if (typeof filter == 'undefined')
-            files = dirfile.list();
-        else
-            files = dirfile.list(filter);
-
-        _foreach(files, function (file){
-            file = new java.io.File(dir + '/' + file);
-            if (file.isDirectory()){
-                recurse(file.canonicalPath, store);
-            }else{
-                store.push(file.canonicalPath);
-            }
-        });
+exports.find = function( dir , filter ) {
+  var result = [];
+  var recurse = function( dir, store ) {
+    var files, dirfile = new File( dir );
+    
+    if ( typeof filter == 'undefined' ) {
+      files = dirfile.list();
+    } else {
+      files = dirfile.list(filter);
     }
-    recurse(dir,result);
-    return result;
-}
+    _foreach( files, function( file ) {
+      file = new java.io.File( dir + '/' + file );
+      if ( file.isDirectory() ) {
+        recurse( file.canonicalPath, store );
+      } else {
+        store.push( file.canonicalPath );
+      }
+    });
+  };
+  recurse( dir, result );
+  return result;
+};
+/************************************************************************
+### utils.serverAddress() function
+
+The utils.serverAddress() function returns the IP(v4) address of the server.
+
+```javascript
+var utils = require('utils');
+var serverAddress = utils.serverAddress();
+console.log(serverAddress);
+```
+***/
+exports.serverAddress = function() {
+  var interfaces = java.net.NetworkInterface.getNetworkInterfaces();
+  var current,
+    addresses,
+    current_addr;
+  while ( interfaces.hasMoreElements() ) {
+    current = interfaces.nextElement();
+    if ( ! current.isUp() || current.isLoopback() || current.isVirtual() ) {
+      continue;
+    }
+    addresses = current.getInetAddresses();
+    while (addresses.hasMoreElements()) {
+      current_addr = addresses.nextElement();
+      if ( current_addr.isLoopbackAddress() ) 
+	continue;
+      if ( current_addr instanceof java.net.Inet4Address)
+          return current_addr.getHostAddress();
+    }
+  }  
+  return null;
+};
+/************************************************************************
+### utils.watchFile() function
+
+Watches for changes to the given file or directory and calls the function provided
+when the file changes.
+
+#### Parameters
+ 
+ * File - the file to watch (can be a file or directory)
+ * Callback - The callback to invoke when the file has changed. The callback takes the 
+   changed file as a parameter.
+
+#### Example
+
+```javascript
+var utils = require('utils');
+utils.watchFile( 'test.txt', function( file ) { 
+   console.log( file + ' has changed');
+});
+```
+***/
+var filesWatched = {};
+exports.watchFile = function( file, callback ) {
+  if ( typeof file == 'string' ) { 
+    file = new File(file);
+  }
+  filesWatched[file.canonicalPath] = {
+    callback: callback,
+    lastModified: file.lastModified()
+  };
+};
+/************************************************************************
+### utils.unwatchFile() function
+
+Removes a file from the watch list.
+
+#### Example
+```javascript
+var utils = require('utils');
+utils.unwatchFile( 'test.txt');
+```
+
+***/
+exports.unwatchFile = function( file, callback ) {
+  if ( typeof file == 'string' ) { 
+    file = new File(file);
+  }
+  delete filesWatched[file.canonicalPath];  
+};
+
+function fileWatcher() {
+  for (var file in filesWatched) {
+    var fileObject = new File(file);
+    var lm = fileObject.lastModified();
+    if ( lm != filesWatched[file].lastModified ) {
+      filesWatched[file].lastModified = lm;
+      filesWatched[file].callback(fileObject);
+    }
+  }
+  setTimeout( fileWatcher, 5000 );
+};
+setTimeout( fileWatcher, 5000 );

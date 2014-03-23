@@ -27,8 +27,7 @@ This method is used to register event listeners.
    enclosing quotes).
 
  * callback - A function which will be called whenever the event
-   fires. The callback should take 2 parameters, listener (the Bukkit
-   registered listener for this callback) and event (the event fired).
+   fires. The callback should take a single parameter, event (the event fired).
 
  * priority (optional - default: "HIGHEST") - The priority the
    listener/callback takes over other listeners to the same
@@ -38,79 +37,107 @@ This method is used to register event listeners.
 
 #### Returns
 
-An org.bukkit.plugin.RegisteredListener object which can be used to
-unregister the listener. This same object is passed to the callback
-function each time the event is fired.
+An object which can be used to unregister the listener. 
 
 #### Example:
 
 The following code will print a message on screen every time a block is broken in the game
 
-    events.on('block.BlockBreakEvent', function(listener, evt){ 
-        evt.player.sendMessage( evt.player.name + ' broke a block!');
-    });
+```javascript
+events.on( 'block.BlockBreakEvent', function( evt ) { 
+    evt.player.sendMessage( evt.player.name + ' broke a block!');
+} );
+```
 
 To handle an event only once and unregister from further events...
-    
-    events.on('block.BlockBreakEvent', function(listener, evt){ 
-        evt.player.sendMessage( evt.player.name + ' broke a block!');
-        evt.handlers.unregister(listener);
-    });
+
+```javascript    
+events.on( 'block.BlockBreakEvent', function( evt ) { 
+    evt.player.sendMessage( evt.player.name + ' broke a block!');
+    this.unregister();
+} );
+
+The `this` keyword when used inside the callback function refers to
+the Listener object created by ScriptCraft. It has a single method
+`unregister()` which can be used to stop listening. This is the same
+object which is returned by the `events.on()` function.
 
 To unregister a listener *outside* of the listener function...
 
-    var myBlockBreakListener = events.on('block.BlockBreakEvent',function(l,e){ ... });
-    ...
-    var handlers = org.bukkit.event.block.BlockBreakEvent.getHandlerList();
-    handlers.unregister(myBlockBreakListener);
+```javascript    
+var myBlockBreakListener = events.on( 'block.BlockBreakEvent', function( evt ) { ... } );
+...
+myBlockBreakListener.unregister();
+```
 
 To listen for events using a full class name as the `eventName` parameter...
 
-    events.on(org.bukkit.event.block.BlockBreakEvent, function(listener, evt){ 
-        evt.player.sendMessage( evt.player.name + ' broke a block!');
-    });
+```javascript    
+events.on( org.bukkit.event.block.BlockBreakEvent, function( evt ) { 
+    evt.player.sendMessage( evt.player.name + ' broke a block!');
+} );
+```
 
 [buk2]: http://wiki.bukkit.org/Event_API_Reference
 [buk]: http://jd.bukkit.org/dev/apidocs/index.html?org/bukkit/event/Event.html
 
 ***/
 
-var bkEvent = org.bukkit.event;
-var bkEvtExecutor = org.bukkit.plugin.EventExecutor;
-var bkRegListener = org.bukkit.plugin.RegisteredListener;
+var bkEventPriority = org.bukkit.event.EventPriority,
+  bkEventExecutor = org.bukkit.plugin.EventExecutor,
+  bkRegisteredListener = org.bukkit.plugin.RegisteredListener,
+  bkEventPackage = 'org.bukkit.event.';
 
 exports.on = function( 
-    /* String or java Class */
-    eventType, 
-    /* function( registeredListener, event) */ 
-    handler,   
-    /* (optional) String (HIGH, HIGHEST, LOW, LOWEST, NORMAL, MONITOR), */
-    priority   ) {
+  /* String or java Class */
+  eventType, 
+  /* function( registeredListener, event) */ 
+  handler,   
+  /* (optional) String (HIGH, HIGHEST, LOW, LOWEST, NORMAL, MONITOR), */
+  priority   ) {
+  var handlerList,
+    listener = {},
+    eventExecutor;
 
-    if (typeof priority == "undefined"){
-        priority = bkEvent.EventPriority.HIGHEST;
-    }else{
-        priority = bkEvent.EventPriority[priority];
+  if ( typeof priority == 'undefined' ) {
+    priority = bkEventPriority.HIGHEST;
+  } else {
+    priority = bkEventPriority[priority.toUpperCase()];
+  }
+  if ( typeof eventType == 'string' ) {
+    /*
+     Nashorn doesn't support bracket notation for accessing packages. 
+     E.g. java.net will work but java['net'] won't. 
+     
+     https://bugs.openjdk.java.net/browse/JDK-8031715
+     */
+    if ( typeof Java != 'undefined' ) {
+      // nashorn environment
+      eventType = Java.type( bkEventPackage + eventType );
+    } else {
+      eventType = eval( bkEventPackage + eventType );
     }
-    if (typeof eventType == "string"){
-        eventType = eval('org.bukkit.event.' + eventType);
-    }
-    var handlerList = eventType.getHandlerList();
-    var listener = {};
-    var eventExecutor = new bkEvtExecutor(){
-        execute: function(l,e){
-            handler(listener.reg,e);
-        } 
-    };
-    /* 
-       wph 20130222 issue #64 bad interaction with Essentials plugin
-       if another plugin tries to unregister a Listener (not a Plugin or a RegisteredListener)
-       then BOOM! the other plugin will throw an error because Rhino can't coerce an
-       equals() method from an Interface.
-       The workaround is to make the ScriptCraftPlugin java class a Listener.
-       Should only unregister() registered plugins in ScriptCraft js code.
-    */
-    listener.reg = new bkRegListener( __plugin, eventExecutor, priority, __plugin, true);
-    handlerList.register(listener.reg);
-    return listener.reg;
+  }
+  handlerList = eventType.getHandlerList( );
+
+  var result = { };
+  eventExecutor = new bkEventExecutor( ) {
+    execute: function( l, evt ) {
+      handler.call( result, evt );
+    } 
+  };
+  /* 
+   wph 20130222 issue #64 bad interaction with Essentials plugin
+   if another plugin tries to unregister a Listener (not a Plugin or a RegisteredListener)
+   then BOOM! the other plugin will throw an error because Rhino can't coerce an
+   equals() method from an Interface.
+   The workaround is to make the ScriptCraftPlugin java class a Listener.
+   Should only unregister() registered plugins in ScriptCraft js code.
+   */
+  listener.reg = new bkRegisteredListener( __plugin, eventExecutor, priority, __plugin, true );
+  handlerList.register( listener.reg );
+  result.unregister = function(){
+    handlerList.unregister( listener.reg );
+  };
+  return result;
 };

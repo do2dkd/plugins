@@ -1,10 +1,12 @@
 # Global configuration for PurpleIRC
+# NOTE: If you make changes to this file while the server is running use "/irc reloadconfig" to load the changes into memory.
 # How often we check to see if a bot is connected to the IRC server. This is in server ticks (There 20 ticks in one sec).
 conn-check-interval: 1000
 enable-ident-server: false
 channel-check-interval: 100
 message-format:
   console-chat: '&r[&5Server&r] %MESSAGE%'
+  game-achievement: '[&2%WORLD%] %NAME% has just earned the achievement [%MESSAGE%]'
   game-action: '&r***%NAME%&r %MESSAGE%'
   game-pchat: '&r<%NAME%&r> &r%MESSAGE%'
   death-messages: '[&2%WORLD%] %MESSAGE%'
@@ -52,7 +54,6 @@ message-format:
   irc-hero-topic: '&r[&rIRC&r] Topic changed by %NAME%&r: %TOPIC%.'
   titan-chat: '&r[%CHANNEL%&r]<%NAME%&r> %MESSAGE%'
   irc-titan-chat: '&r[&rIRC&r]<%NAME%&r> %MESSAGE%'
-  towny-channel-chat: '&r%TOWNYCHANNELTAG%[%TOWNYCHANNEL%]<%NAME%&r> %MESSAGE%'
   invalid-irc-command: I'm sorry '%NICK%' I can't do that. Type '%CMDPREFIX%help' for a list of commands I might respond to.
   no-perm-for-irc-command: I'm sorry '%NICK%' you are not authorized to do that. Type '%CMDPREFIX%help' for a list of commands I might respond to.
   rts-notify: '[RTS] <%NAME%> %MESSAGE%'
@@ -63,6 +64,8 @@ message-format:
   rts-assign: '[RTS:Assign] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
   rts-reopen: '[RTS:Reopen] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
   dynmap-web-chat: '[Dynmap] <%NAME%> %MESSAGE%'
+  irc-dynmap-web-chat: '[IRC] %MESSAGE%'
+  ore-broadcast: '[OreBroadcast] %MESSAGE%'
   jobs-separator: ', '
   irc-hero-channels:
     Global: '&f[G]&f[IRC]%PLAYERPREFIX%%NAME%&f %MESSAGE%'
@@ -70,6 +73,10 @@ message-format:
     Global: '&r[%CHANNEL%&r]<%NAME%&r> %MESSAGE%'
   hero-action-channels:
     Global: '&r[&2%CHANNEL%&r] ***%NAME%&r %MESSAGE%'
+  towny-channel-chat: '&r%TOWNYCHANNELTAG%[%TOWNYCHANNEL%]<%NAME%&r> %MESSAGE%'
+  irc-towny-chat: '[&3IRC]<%NAME%> %MESSAGE%'
+  irc-towny-channels:
+    irc: '[IRC]%PLAYERPREFIX%%NAME% %MESSAGE%'
   broadcast-message: '[Broadcast] <%NAME%> %MESSAGE%'
   broadcast-console-message: '[Broadcast] <Console> %MESSAGE%'
   default-player-suffix: ''
@@ -87,4 +94,44 @@ strip-irc-colors: false
 custom-tab-list: false
 custom-tab-prefix: '[IRC] '
 nick-exact-match: true
+irc-color-map:
+  AQUA: CYAN
+  BLACK: BLACK
+  BLUE: BLUE
+  BOLD: BOLD
+  DARK_AQUA: TEAL
+  DARK_BLUE: DARK_BLUE
+  DARK_GRAY: DARK_GRAY
+  DARK_GREEN: DARK_GREEN
+  DARK_PURPLE: PURPLE
+  DARK_RED: RED
+  GOLD: OLIVE
+  GRAY: LIGHT_GRAY
+  GREEN: GREEN
+  LIGHT_PURPLE: MAGENTA
+  RED: RED
+  UNDERLINE: UNDERLINE
+  YELLOW: YELLOW
+  WHITE: WHITE
+  RESET: NORMAL
+game-color-map:
+  BLACK: BLACK
+  BLUE: BLUE
+  BOLD: BOLD
+  BROWN: GRAY
+  CYAN: AQUA
+  DARK_BLUE: DARK_BLUE
+  DARK_GRAY: DARK_GRAY
+  DARK_GREEN: DARK_GREEN
+  GREEN: GREEN
+  LIGHT_GRAY: GRAY
+  MAGENTA: LIGHT_PURPLE
+  NORMAL: RESET
+  OLIVE: GOLD
+  PURPLE: DARK_PURPLE
+  RED: RED
+  TEAL: DARK_AQUA
+  UNDERLINE: UNDERLINE
+  WHITE: WHITE
+  YELLOW: YELLOW
 Debug: false
