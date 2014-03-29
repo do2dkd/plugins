@@ -9,7 +9,7 @@
 #   The definitions of these templates are in normal-lowres.txt, nether-lowres.txt, and skylands-lowres.txt
 # To use the HDMap hi-res map templates (these can take a VERY long time for initial fullrender), set value to hires
 #   The definitions of these templates are in normal-hires.txt, nether-hires.txt, and skylands-hires.txt
-deftemplatesuffix: vlowres
+deftemplatesuffix: disable
 
 components:
   - class: org.dynmap.ClientConfigurationComponent
@@ -367,7 +367,7 @@ url:
 # Spout support controls
 spout:
     # If false, ignore spout even if detected
-    enabled: true
+    enabled: false
     # If true, previously loaded textures will be assumed to still be valid (faster startup, but
     # can result in stale textures if originals are updated - delete files in texturepacks/standard/spoout
     # to clean cached textures and force reload on next startup)

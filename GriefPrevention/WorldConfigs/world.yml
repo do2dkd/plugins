@@ -132,9 +132,11 @@ GriefPrevention:
         Wilderness:
           AboveSeaLevel: Deny
           BelowSeaLevel: Deny
+          SeaLevel: '-1'
         Claims:
           AboveSeaLevel: Allow
           BelowSeaLevel: Allow
+          SeaLevel: '-1'
           SiegeAttacker: Allow
           SiegeDefender: Deny
           ClaimControl: RequireBuild
@@ -146,9 +148,11 @@ GriefPrevention:
         Wilderness:
           AboveSeaLevel: Deny
           BelowSeaLevel: Deny
+          SeaLevel: '-1'
         Claims:
           AboveSeaLevel: Allow
           BelowSeaLevel: Allow
+          SeaLevel: '-1'
           SiegeAttacker: Allow
           SiegeDefender: Deny
           ClaimControl: RequireBuild
@@ -156,9 +160,11 @@ GriefPrevention:
       Wilderness:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
+        SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
+        SeaLevel: '-1'
         SiegeAttacker: Deny
         SiegeDefender: Deny
         ClaimControl: RequireBuild
@@ -167,9 +173,11 @@ GriefPrevention:
       Wilderness:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
+        SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
+        SeaLevel: '-1'
         SiegeAttacker: Allow
         SiegeDefender: Deny
         ClaimControl: RequireBuild
@@ -178,33 +186,41 @@ GriefPrevention:
       Wilderness:
         AboveSeaLevel: Allow
         BelowSeaLevel: Allow
+        SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
         ClaimControl: Disabled
     FireDestroys:
       Wilderness:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
         ClaimControl: Disabled
     FireSpreadOrigin:
       Wilderness:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
         ClaimControl: Disabled
     FireSpreadTarget:
       Wilderness:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
       Claims:
         AboveSeaLevel: Deny
         BelowSeaLevel: Deny
+        SeaLevel: '-1'
         ClaimControl: Disabled
     CreeperExplosions:
       Wilderness:
