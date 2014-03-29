@@ -13,7 +13,6 @@ AuthMe/config.yml
 AuthMe/players.yml
 CommandBook/sessions/
 CommandBook/bans.csv
-CommunityBridge/config.yml
 PurpleIRC/bots/
 dynmap/web/tiles/
 dynmap/web/standalone/*.json
