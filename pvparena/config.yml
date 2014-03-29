@@ -1,0 +1,14 @@
+debug: none
+server_log: false
+stats: true
+tracker: true
+modulecheck: true
+language: en
+onlyPVPinArena: false
+update: both
+updatetype: beta
+safeadmin: true
+y-offset: 0.5
+whitelist:
+- ungod
+ver: 1
