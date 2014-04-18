@@ -11,4 +11,14 @@ safeadmin: true
 y-offset: 0.5
 whitelist:
 - ungod
+use_shortcuts: false
+only_shortcuts: false
+consoleoffduty: false
+shortcuts:
+  freeforall:
+  - arena1
+  - arena2
+  teams:
+  - teamarena1
+  - teamarena2
 ver: 1

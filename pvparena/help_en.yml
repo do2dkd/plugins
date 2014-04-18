@@ -43,6 +43,12 @@ nulang:
       - /pa debug [values]
       - '-------------------------------------------'
       - Valid values are class numbers (separated by comma) and &enone&r
+      duty:
+      - Toggle your override status
+      - '-------------------------------------------'
+      - 'shorthand command: !du'
+      - '-------------------------------------------'
+      - /pa duty
       disable:
       - Disable an arena
       - '-------------------------------------------'
@@ -242,6 +248,13 @@ nulang:
       - '-------------------------------------------'
       - /pa [arenaname] teleport [spawnname]
       - 'shorthand command: !t'
+      template:
+      - Save/load arena configs
+      - '-------------------------------------------'
+      - 'shorthand command: !tmp'
+      - '-------------------------------------------'
+      - /pa {arenaname} template load {filename}
+      - /pa {arenaname} template save {filename}
       uninstall:
       - Uninstall a PVP Arena module
       - '-------------------------------------------'

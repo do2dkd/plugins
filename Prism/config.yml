@@ -182,6 +182,8 @@ prism:
     ores:
       enabled: true
       log-to-console: true
+      log-commands:
+      - examplecommand <alert>
       blocks:
         '14': '&6'
         '15': '&7'
@@ -200,6 +202,8 @@ prism:
     illegal-commands:
       enabled: false
       log-to-console: true
+      log-commands:
+      - examplecommand <alert>
       commands:
       - op
       - deop
@@ -208,6 +212,8 @@ prism:
     uses:
       enabled: true
       log-to-console: true
+      log-commands:
+      - examplecommand <alert>
       lighter: true
       lava: true
       item-placement:

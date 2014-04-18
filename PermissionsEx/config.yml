@@ -7,4 +7,13 @@ permissions:
       uri: mysql://localhost/minecraft
       user: minecraft
       password: minecraft
+      type: sql
   superperms: {}
+  debug: false
+  allowOps: false
+  user-add-groups-last: false
+  log-players: false
+  createUserRecords: false
+multiserver:
+  use-netevents: true
+updater: true
