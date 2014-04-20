@@ -82,6 +82,9 @@ nulang:
     WOLF: a wolf
     IRON_GOLEM: an iron golem
     SPLASH_POTION: a splash potion
+  duty:
+    'false': You are now off duty!
+    'true': You are now on duty!
   error:
     arena:
       alreadyplaying: You are already part of &a%1%&r
@@ -243,6 +246,12 @@ nulang:
       tankdown: The tank is down!
       tankmode: TANK MODE! Everyone kill %1%, the tank!
       tankwon: The tank has won! Congratulations to %1%!
+    tdc:
+      denied: '%1% denied a kill!'
+      remaining: '%1% kills remaining for %2%.'
+      scored: '%1% scored a kill!'
+      youdenied: You denied a kill!
+      youscored: You scored a kill!
     pillars:
       msg:
         block_broken: '[%1%] %2% broke a block!'
@@ -393,6 +402,9 @@ nulang:
     add: 'Team added: %1%'
     set: 'Team set: %1%'
     remove: 'Team removed: %1%'
+  template:
+    loaddone: Template loaded from &a%1%&r
+    savedone: Template saved to &a%1%&r
   time:
     minutes: minutes
     seconds: seconds

@@ -1,4 +1,4 @@
-# MobArena v0.96.3 - Config-file
+# MobArena v0.96.4 - Config-file
 # Read the Wiki for details on how to set up this file: http://goo.gl/F5TTc
 # Note: You -must- use spaces instead of tabs!
 global-settings:
@@ -22,7 +22,7 @@ classes:
     items: stone_sword, flint_and_steel, netherrack:2, tnt:4, potion:8197:3
     armor: 298,299,300,301
 arenas:
-  default:
+  mazenta-01:
     settings:
       world: world
       enabled: true
@@ -110,8 +110,24 @@ arenas:
           '13': iron_sword, iron_pickaxe, iron_spade
           '16': diamond_sword
     coords:
-      spawnpoints: {}
+      spawnpoints:
+        -263,66,308: -262.5,66,308.5,0.0,0.0,world
+        -267,66,302: -266.5,66,302.5,0.0,0.0,world
+        -275,66,302: -274.5,66,302.5,0.0,0.0,world
+        -282,66,302: -281.5,66,302.5,0.0,0.0,world
+        -285,66,308: -284.5,66,308.5,0.0,0.0,world
+        -283,66,314: -282.5,66,314.5,0.0,0.0,world
+        -275,66,314: -274.5,66,314.5,0.0,0.0,world
+        -267,66,313: -266.5,66,313.5,0.0,0.0,world
       containers: {}
+      p1: -288,65,298,0.0,0.0,world
+      p2: -261,76,318,0.0,0.0,world
+      lobby: -257.5,66,303.5,-270.61,0.0,world
+      spectator: -286.5,73,310.5,-90.31,0.0,world
+      arena: -270.5,66,308.5,91.79,0.0,world
+      exit: -252.5,66,308.5,92.99,0.0,world
+      l1: -260,65,298,0.0,0.0,world
+      l2: -256,76,318,0.0,0.0,world
     class-limits:
       Archer: -1
       Oddjob: -1

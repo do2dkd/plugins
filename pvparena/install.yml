@@ -1,42 +1,43 @@
 goals:
-    pillars: v1.0.1.57
+    pillars: v1.2.2.421
 mods:
     aftermatch: v1.0.1.112
-    announcements: v1.0.7.219
+    announcements: v1.1.0.367
     arenaboards: v1.0.1.60
     arenamaps: v1.0.1.59
-    arenarotate: v1.0.7.228
-    autovote: v1.0.7.218
+    arenarotate: v1.1.0.302
+    autovote: v1.2.2.423
     bankick: v1.0.0.25
-    battlefieldguard: v1.0.1.59
-    battlefieldmanager: v1.0.8.258
-    betterclasses: v1.0.1.107
-    betterfight: v1.0.3.164
-    bettergears: v1.0.1.109
-    blockrestore: v1.0.2.148
-    chestfiller: v1.0.9.181
-    colorteams: v1.0.1.59
-    duel: v0.10.3.0
-    eventactions: v1.0.3.164
-    factions: v1.0.1.44
+    battlefieldguard: v1.1.0.331
+    battlefieldmanager: v1.1.0.331
+    betterclasses: v1.1.0.391
+    betterfight: v1.1.0.370
+    bettergears: v1.1.0.329
+    blockrestore: v1.1.0.331
+    chestfiller: v1.1.0.334
+    colorteams: v1.1.0.352
+    duel: v1.0.9.290
+    eventactions: v1.1.0.334
+    factions: v1.2.2.421
     fixinventoryloss: v1.0.1.59
-    flyspectate: v1.0.1.144
-    items: v1.0.8.265
-    latelounge: v1.0.8.267
-    matchresultstats: v1.0.8.265
+    flyspectate: v1.2.2.421
+    items: v1.1.0.298
+    latelounge: v1.1.0.358
+    matchresultstats: v1.1.0.298
     playerfinder: v1.0.4.177
-    powerups: v1.0.7.210
-    realspectate: v1.0.1.104
+    powerups: v1.1.0.355
+    realspectate: v1.2.2.421
     redstonetriggers: v1.0.1.44
-    respawnrelay: v1.0.9.278
-    scoreboards: v1.0.4.172
+    respawnrelay: v1.1.0.395
+    scoreboards: v1.1.0.396
+    singleplayersupport: v1.1.0.307
     skins: v1.0.1.128
-    specialjoin: v1.0.1.72
-    startfreeze: v1.0.1.59
+    specialjoin: v1.1.0.344
+    startfreeze: v1.1.0.337
     teamsizerestrict: v1.0.9.281
-    tempperms: v1.0.9.279
-    turrets: v1.0.1.44
-    vault: v1.0.9.283
-    walls: v1.0.1.60
-    worldedit: v1.0.1.59
+    tempperms: v1.1.0.333
+    turrets: v1.1.0.344
+    vault: v1.2.2.429
+    walls: v1.1.0.297
+    worldedit: v1.1.0.331
 regionshapes: {}
