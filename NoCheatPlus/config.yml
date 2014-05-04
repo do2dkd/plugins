@@ -379,6 +379,9 @@ checks:
         loginticks: 0
         falldamage: true
         sfviolation: 500
+    trace:
+      size: 60
+      mergedist: 0.9752
     vehicles:
       preventdestroyown: true
       enforcelocation: true
