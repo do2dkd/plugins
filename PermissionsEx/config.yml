@@ -14,6 +14,8 @@ permissions:
   user-add-groups-last: false
   log-players: false
   createUserRecords: false
+  informplayers:
+    changes: false
 multiserver:
   use-netevents: true
 updater: true
