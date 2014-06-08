@@ -261,6 +261,15 @@ nulang:
         claimed: '[%1%] %2% claimed the pillar!'
         unclaimed: '[%1%] %2% unclaimed the pillar!'
         score: '%1% scored %2% points'
+    rescue:
+      flaghomeleft: '%1% brought home the hostage of team %2%! Rescues remaining:
+        %3%'
+      flagsave: '%1% dropped the hostage of team %2%!'
+      flaggrab: '%1% grabbed the hostage of team %2%!'
+      flagnotsafe: Your hostage is taken! Cannot bring back an enemy hostage!'
+      setflag: 'Rescue set: %1%'
+      tosetflag: 'Rescue to set: %1%'
+      typeset: 'Hostage type set to: &e%1%'
   help:
     head: '&e--- &aPVP Arena Help&e %1% &e---'
     admin: '&c%1% - help administrating'
@@ -500,6 +509,9 @@ nulang:
       created: 'Region created: &e%1%'
       loaded: 'Region loaded: &e%1%'
       saved: 'Region saved: &e%1%'
+    worldguard:
+      created: 'Region not found: &e%1%'
+      saved: Region &e%2%&f saved to &e%1%
   banvote:
     lang:
       playerbanned: 'Player banned: %1%'

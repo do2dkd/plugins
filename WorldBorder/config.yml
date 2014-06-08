@@ -1,4 +1,4 @@
-cfg-version: 10
+cfg-version: 11
 message: '&c세상의 끝에 다다렀습니다. 더이상 나아갈 수 없습니다.'
 round-border: true
 debug-mode: false
@@ -12,8 +12,8 @@ remount-delay-ticks: 0
 player-killed-bad-spawn: false
 deny-enderpearl: true
 fill-autosave-frequency: 30
-bypass-list: []
 fill-memory-tolerance: 500
+bypass-list-uuids: []
 worlds:
   world:
     x: 0.0
