@@ -3,7 +3,7 @@ savebackconfig: true
 configversion:
   notify: true
   created: 670
-  saved: 670
+  saved: 695
 logging:
   active: true
   debug: false
@@ -120,6 +120,9 @@ checks:
       actions: cancel vl>5 log:breach:0:2:if cancel
     noswing:
       active: true
+      exceptions:
+      - WATER_LILY
+      - FLINT_AND_STEEL
       actions: cancel vl>10 log:noswing:0:5:if cancel
     speed:
       active: true
@@ -149,6 +152,7 @@ checks:
       actions: cancel cmd:kickcaptcha vl>4 log:captcha:2:5:cf cancel cmd:kickcaptcha
     text:
       active: true
+      allowvlreset: true
       frequency:
         normal:
           minimum: 0.0

@@ -99,6 +99,13 @@ nulang:
       - /pa install [modulename]
       - '-------------------------------------------'
       - modules / arenas will list available files
+      playerclass:
+      - Manage arena player classes
+      - '-------------------------------------------'
+      - 'shorthand command: !pcl'
+      - '-------------------------------------------'
+      - /pa [arenaname] playerclass save {classname}
+      - /pa [arenaname] playerclass remove {classname}
       protection:
       - Manage arena region protections
       - '-------------------------------------------'

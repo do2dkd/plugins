@@ -16,6 +16,7 @@ prism:
     username: minecraft
     password: minecraft
     database: minecraft
+    prefix: prism_
     port: '3306'
   paste:
     enable: false
