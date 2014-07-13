@@ -50,6 +50,7 @@ components:
     - god
     - flight
     - freeze
+    - afk
 
 # Configurations for CommandBook's built-in components are stored here.
 # Custom component configurations are stored as individual files in the the config/ folder
@@ -116,6 +117,16 @@ component:
             no-perm: That person didn't request a teleport (recently) and you don't have permission to teleport anyone.
     flight:
         auto-enable: false
+    afk-checker:
+        use-movement-event: true
+        movement-threshold: 0.04
+        sneak-movement-threshold: 0.004
+        afk-minutes: 3
+        afk-kick-minutes: 60
+        afk-general-sleep-ignored: true
+        afk-command-sleep-ignored: false
+        afk-general-protection: true
+        afk-command-protection: false
 component-class-dirs:
 - component-classes
 component-jar-dirs:
