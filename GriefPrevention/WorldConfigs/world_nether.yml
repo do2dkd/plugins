@@ -16,7 +16,7 @@ GriefPrevention:
     ProtectPlayersInLandClaims:
       PlayerOwnedClaims: false
       AdministrativeClaims: false
-  Enabled: true
+  Enabled: false
   SeaLevelOverride:
     Enabled: false
   HorseTrust: Disabled
