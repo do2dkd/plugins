@@ -7,6 +7,7 @@ channel-check-interval: 100
 message-format:
   console-chat: '&r[&5Server&r] %MESSAGE%'
   game-achievement: '[&2%WORLD%] %NAME% has just earned the achievement [%MESSAGE%]'
+  game-mode: '[&2%WORLD%&r] %NAME% has changed game mode: [%MESSAGE%]'
   game-action: '&r***%NAME%&r %MESSAGE%'
   game-pchat: '&r<%NAME%&r> &r%MESSAGE%'
   death-messages: '[&2%WORLD%] %MESSAGE%'
@@ -20,6 +21,8 @@ message-format:
   game-send: '&r<%NAME%&r> &r%MESSAGE%'
   ess-player-afk: '&r %NAME% &ris now AFK'
   ess-player-not-afk: '&r %NAME% &ris no longer AFK'
+  ess-helpop: '&4[HelpOp] %DISPLAYNAME%&r: %MESSAGE%'
+  irc-ess-helpop: '&4[HelpOp] %DISPLAYNAME%&r: %MESSAGE%'
   irc-action: '&r[&r#minec&r] ***%NAME%&r %MESSAGE%'
   irc-chat: '&r[&r#minec&r]<%NAME%&r> %MESSAGE%'
   irc-pchat: '&dPrivate message: &r[&r#minec&r]<%NAME%&r> %MESSAGE%'
@@ -79,6 +82,14 @@ message-format:
     irc: '[IRC]%PLAYERPREFIX%%NAME% %MESSAGE%'
   broadcast-message: '[Broadcast] <%NAME%> %MESSAGE%'
   broadcast-console-message: '[Broadcast] <Console> %MESSAGE%'
+  prism-rollback: '[PrismRollback] [Player: %NAME%] [Radius: %RADIUS%] [Command: %COMMAND%]
+    [Keyword: %KEYWORD%] [X,Y,Z: %X%,%Y%,%Z%] [World: %PARAMWORLD%]'
+  prism-drain: '[PrismDrain] [Player: %NAME%] [Radius: %RADIUS%] [OrigBlock: %ORIGINALBLOCK%]
+    [NewBlock: %NEWBLOCK%] [X,Y,Z: %X%,%Y%,%Z%] [World: %BLOCKWORLD%]'
+  prism-extinguish: '[PrismExtinguish] [Player: %NAME%] [Radius%: %RADIUS] [OrigBlock:
+    %ORIGINALBLOCK%] [NewBlock: %NEWBLOCK%] [X,Y,Z: %X%,%Y%,%Z%] [World: %BLOCKWORLD%]'
+  prism-custom: '[PrismCustom] [Player: %NAME%] [Action: %ACTION%] [Message: %MESSAGE%]
+    [Plugin: %PLUGIN%]'
   default-player-suffix: ''
   default-player-prefix: ''
   default-group-suffix: ''
@@ -91,9 +102,16 @@ list-player: '%GROUPPREFIX%%NAME%'
 list-sort-by-name: true
 strip-game-colors: false
 strip-irc-colors: false
+strip-irc-bg-colors: true
 custom-tab-list: false
 custom-tab-prefix: '[IRC] '
 nick-exact-match: true
+nick-prefixes:
+  ircop: '&4~'
+  ircsuperop: '&6&&'
+  op: '&c@'
+  halfop: '&3%'
+  voice: '&2+'
 irc-color-map:
   AQUA: CYAN
   BLACK: BLACK
@@ -135,3 +153,4 @@ game-color-map:
   WHITE: WHITE
   YELLOW: YELLOW
 Debug: false
+ignore-chat-cancel: false
