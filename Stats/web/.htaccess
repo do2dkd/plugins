@@ -1,0 +1,37 @@
+#
+# Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
+#
+
+# NOTE: Do not edit, change, delete, or `attempt to fix this file`. We will not provide support for it.
+
+# BEGIN Fluid MC Stats
+# END Fluid MC Stats
+
+# BEGIN Security Features
+# Deny config.php
+<files config.php>
+  order allow,deny
+  deny from all
+</files>
+
+# Deny all .hta* files
+<files ~ "^.*\.([Hh][Tt][Aa])">
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+
+# Deny access to version file
+<files inc/version.php>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+
+# Deny access to security file
+<files inc/security.php>
+  order allow,deny
+  deny from all
+  satisfy all
+</files>
+# END Security Features

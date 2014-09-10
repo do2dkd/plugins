@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) AccountProductions and Sybren Gjaltema, 2014. All rights reserved.
+ */
+
+/*
+ * CSS
+ */
+
+body {
+  background-color: #5a17df;
+  padding-top: 70px;
+}
+
+h3.mc-online {
+  color: #47a447
+}
+
+h3.mc-unknown {
+  color: #c78026
+}
+
+h3.mc-offline {
+  color: #f00
+}
+
+.make-center {
+  text-align: center;
+}
+
+.make-right {
+  text-align: right;
+}
+
+.make-left {
+  text-align: left;
+}
+
+div.content-container {
+  width: 100%;
+}
+
+img.avatar-list-icon {
+  height: 16px;
+  width: 16px;
+}
+
+img.avatar-player-page {
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+img.server-sidebar-icon {
+  height: auto;
+  width: 50%;
+  max-width: 128px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
