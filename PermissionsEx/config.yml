@@ -16,6 +16,7 @@ permissions:
   createUserRecords: false
   informplayers:
     changes: false
+  basedir: plugins/PermissionsEx
 multiserver:
   use-netevents: true
 updater: true
