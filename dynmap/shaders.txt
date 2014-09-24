@@ -195,3 +195,7 @@ shaders:
     color300: '#FFFF00'
     color1000: '#FF8000'
     color3000: '#FF0000'
+-   class: org.dynmap.hdmap.DefaultHDShader
+    name: amidst
+    biomecolored: biome
+    colorscheme: amidst

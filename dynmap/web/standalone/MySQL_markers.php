@@ -1,6 +1,8 @@
 <?php
 ob_start();
-include('dynmap_access.php');
+require_once('MySQL_funcs.php');
+include('MySQL_config.php');
+include('MySQL_access.php');
 ob_end_clean();
 
 session_start();
@@ -34,20 +36,14 @@ if(($parts[0] != "faces") && ($parts[0] != "_markers_")) {
     exit();
 }
 
-$db = mysqli_connect('p:' . $dbhost, $dbuserid, $dbpassword, $dbname, $dbport);
-if (mysqli_connect_errno()) {
-    header('HTTP/1.0 500 Error');
-    echo "<h1>500 Error</h1>";
-    echo "Error opening database";
-	$db->close();
-    exit;
-}
+initDbIfNeeded();
 
 if ($parts[0] == "faces") {
 	if (count($parts) != 3) {
 	    header('HTTP/1.0 500 Error');
     	echo "<h1>500 Error</h1>";
     	echo "Bad face: " . $path;
+    	cleanupDb();
     	exit();
 	}
 	$ft = 0;
@@ -64,7 +60,7 @@ if ($parts[0] == "faces") {
 		$ft = 3;
 	}
 	$pn = explode(".", $parts[2]);
-	$stmt = $db->prepare('SELECT Image from Faces WHERE PlayerName=? AND TypeID=?');
+	$stmt = $db->prepare('SELECT Image from ' . $dbprefix . 'Faces WHERE PlayerName=? AND TypeID=?');
 	$stmt->bind_param('si', $pn[0], $ft);
 	$res = $stmt->execute();
 	$stmt->bind_result($timage);
@@ -74,14 +70,13 @@ if ($parts[0] == "faces") {
 	}
 	else {
 		header('Location: ../images/blank.png');
-		exit;
 	}
 }
 else { // _markers_
 	$in = explode(".", $parts[1]);
 	if (($in[1] == "json") && (strpos($in[0], "marker_") == 0)) {
 		$world = substr($in[0], 7);
-		$stmt = $db->prepare('SELECT Content from MarkerFiles WHERE FileName=?');
+		$stmt = $db->prepare('SELECT Content from ' . $dbprefix . 'MarkerFiles WHERE FileName=?');
 		$stmt->bind_param('s', $world);
 		$res = $stmt->execute();
 		$stmt->bind_result($timage);
@@ -94,7 +89,7 @@ else { // _markers_
 		}
 	}
 	else {
-		$stmt = $db->prepare('SELECT Image from MarkerIcons WHERE IconName=?');
+		$stmt = $db->prepare('SELECT Image from ' . $dbprefix . 'MarkerIcons WHERE IconName=?');
 		$stmt->bind_param('s', $in[0]);
 		$res = $stmt->execute();
 		$stmt->bind_result($timage);
@@ -104,14 +99,13 @@ else { // _markers_
 		}
 		else {
 			header('Location: ../images/blank.png');
-			exit;
 		}
 	}
 }
 
 $stmt->close();
-$db->close();
 
+cleanupDb();
 
 exit;
 ?>

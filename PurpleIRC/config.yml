@@ -90,6 +90,7 @@ message-format:
     %ORIGINALBLOCK%] [NewBlock: %NEWBLOCK%] [X,Y,Z: %X%,%Y%,%Z%] [World: %BLOCKWORLD%]'
   prism-custom: '[PrismCustom] [Player: %NAME%] [Action: %ACTION%] [Message: %MESSAGE%]
     [Plugin: %PLUGIN%]'
+  reddit-messages: '[R] %MESSAGE%'
   default-player-suffix: ''
   default-player-prefix: ''
   default-group-suffix: ''

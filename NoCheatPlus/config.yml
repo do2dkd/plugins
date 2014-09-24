@@ -3,7 +3,7 @@ savebackconfig: true
 configversion:
   notify: true
   created: 670
-  saved: 695
+  saved: 727
 logging:
   active: true
   debug: false
@@ -351,6 +351,13 @@ checks:
       actions: log:flyshort:3:5:f cancel vl>100 log:flyshort:0:5:if cancel vl>400 log:flylong:0:5:cif cancel
     morepackets:
       active: true
+      seconds: 6
+      epsideal: 20
+      epsmax: 22
+      burst:
+        packets: 40
+        directviolation: 60
+        epmviolation: 180
       actions: cancel vl>10 log:morepackets:0:2:if cancel vl>100 log:morepackets:0:2:if cancel cmd:kickpackets
     morepacketsvehicle:
       active: true
@@ -401,6 +408,14 @@ checks:
     assumesprint: true
     speedgrace: 4.0
     enforcelocation: true
+  net:
+    flyingfrequency:
+      active: true
+      seconds: 5
+      maxpackets: 300
+    sounddistance:
+      active: true
+      maxdistance: 320
 strings:
   angle: '[player] failed [check]: tried to hit multiple entities at the same time. VL [violations].'
   ban: ban [player]
