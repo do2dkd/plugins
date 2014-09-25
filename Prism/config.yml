@@ -84,9 +84,6 @@ prism:
     - 46
     - 51
     allow_rollback_items_removed_from_container: true
-  bukkit:
-    listeners:
-      blockphysicsevent: true
   tracking:
     block-break: true
     block-burn: true
@@ -228,6 +225,9 @@ prism:
     vanilla-xray:
       enabled: true
   queue-empty-tick-delay: 3
+  bukkit:
+    listeners:
+      blockphysicsevent: true
   sqlite:
     enable-delete-limit: false
   notify-newer-versions: true
