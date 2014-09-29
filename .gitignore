@@ -25,6 +25,8 @@ Gringotts/GringottsDB/
 PermissionsEx/includes/
 PluginMetrics/
 Prism/config.php
+Stats/web/config.php
 Updater/
 WorldGuard/report.txt
 displayName.cache
+Votifier/rsa/
