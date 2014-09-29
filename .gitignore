@@ -27,6 +27,7 @@ PluginMetrics/
 Prism/config.php
 Stats/web/config.php
 Updater/
+update/
 WorldGuard/report.txt
 displayName.cache
 Votifier/rsa/
