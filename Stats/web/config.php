@@ -6,36 +6,33 @@
 /**
  * MySQL
  */
-$mysql_host = ''; // MySQL Host.
-$mysql_database = ''; // MySQL Database.
-$mysql_port = ''; // MySQL Port.
-$mysql_user = ''; // MySQL User.
-$mysql_pwd = ''; // MySQL Password.
-$mysql_table_prefix = ''; // Stats prefix - Found in Stats plugin config.
+$mysql_host = "localhost";
+$mysql_database = "minecraft";
+$mysql_port = "3306";
+$mysql_user = "minecraft";
+$mysql_pwd = "minecraft";
+$mysql_table_prefix = "Stats_";
 
 /**
  * Minecraft Server
  */
-$server_name = ''; // Your Minecraft server name.
-$mc_server_ip = ''; // An A Record, AAAA Record, CNAME Record or IP to your Minecraft server without the port.
-$mc_server_port = ''; // Port Number to your Minecraft server.
-$mc_server_disp_addr = ''; // A 'nice' address for your Minecraft server. This will be the address that is displayed on the web interface.
+$server_name = "semaul";
+$mc_server_ip = "minec.semaul.net";
+$mc_server_port = "25565";
+$mc_server_disp_addr = "minec.semaul.net";
 
 /**
  * Fluid MC Stats Interface Config
  */
-$site_name = ''; // Name that will appear in page title and navbar.
-$fa_icon = ''; // The FontAwesome icon you want to be next to your web end title. Use ending only. Ex: Icon you want to use "fa-bookmark-o" Just enter "bookmark-o".
-$avatar_service_uri = 'https://minotar.net/avatar/'; // URI for Avatars. Must follow domain.tld/playername/size. Leave as http://mctar.ws/ for ours.
-$player_top_calc_stat = ''; // Stat that gets used to sort the players
-$player_on_top = ''; //Number of player on top list.
-$custom_footer_text = ''; // Custom text added into the footer.
+$site_name = "Semaul";
+$fa_icon = "fa-plus";
+$avatar_service_uri = "https://minotar.net/avatar/";
+$player_top_calc_stat = "playtime";
+$player_on_top = "10";
+$custom_footer_text = "";
 $custom_links = array( // Links displayed in navbar and sidebar. Add as many as you need (Only add up to 5 from the auto install).
-    "Develop Gravity" => "http://developgravity.com/",
-    "Lolmewn"         => "http://lolmewn.nl/",
-    "Mojang"          => "http://mojang.com/",
 );
-$mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If not set, we will use the server-icon.png on your Minecraft server.
+$mc_custom_icon = "http://minec.semaul.net/server-icon.png";
 
 /**
  * Advanced User's Options
@@ -49,11 +46,11 @@ $mc_custom_icon = ''; // The URL to a custom image to use as the server icon. If
  * It is recommended not to delete these directories off of this server in-case we forget to implement this in some files.
  * These are also still required to be on the local server as the install requires them.
  * You are allowed to use our CDN, please don't use it for popular sites :)
- * $custom_hosted_uri = 'http://static.apservers.io/Fluid-MC-Stats/VersionNumber/';
+$custom_hosted_uri = "";
  */
-$custom_hosted_uri = '';
+$custom_hosted_uri = "";
 
 /**
  * Specify required time, in seconds, players need to be included in global stats generation.
  */
-$required_global_stats_time = '3600'; // 1 Hour
+$required_global_stats_time = "3600";

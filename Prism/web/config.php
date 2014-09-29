@@ -41,7 +41,7 @@ define("DEFAULT_ORDER_BY", '');
 
 // List of supported timezones:
 // http://php.net/manual/en/timezones.php
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Seoul');
 
 // Default format of action dates in display
 define("DEFAULT_DATE_FORMAT", 'Y-m-d H:i:s');

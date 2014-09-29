@@ -15,10 +15,6 @@ GriefPrevention:
         CreativeWorlds: true
     Worlds:
     - world
-    - world_nether
-    - world_the_end
-    - resource
-    - resource_n
     CreativeRulesWorlds: []
     PreventTheft: true
     ProtectCreatures: true
