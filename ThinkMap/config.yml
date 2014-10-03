@@ -1,0 +1,10 @@
+webserver:
+  port: 23333
+  bind-address: 0.0.0.0
+resources:
+  pack-name: ''
+client:
+  hide-ores: false
+no-touchy:
+  resource-version: 3
+  world-version: 3

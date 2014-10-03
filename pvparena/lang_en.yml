@@ -191,6 +191,55 @@ nulang:
     setup: setup an arena
     teleport: teleport to an arena spawn
     user: use PVP Arena
+    cmds:
+      blacklist: use the blacklist command
+      check: use the check command
+      class: use the class command
+      create: use the create command
+      debug: use the debug command
+      disable: use the disable command
+      duty: use the duty command
+      edit: use the edit command
+      enable: use the enable command
+      gamemode: use the gamemode command
+      goal: use the goal command
+      install: use the install command
+      playerclass: use the playerclass command
+      playerjoin: use the playerjoin command
+      protection: use the protection command
+      region: use the region command
+      regionflag: use the regionflag command
+      regions: use the regions command
+      regiontype: use the regiontype command
+      reload: use the reload command
+      remove: use the remove command
+      round: use the round command
+      set: use the set command
+      setowner: use the setowner command
+      setup: use the setup command
+      spawn: use the spawn command
+      start: use the start command
+      stop: use the stop command
+      teams: use the teams command
+      teleport: use the teleport command
+      template: use the template command
+      togglemod: use the togglemod command
+      uninstall: use the uninstall command
+      update: use the update command
+      whitelist: use the whitelist command
+      arenaclass: use the arenaclass command
+      chat: use the chat command
+      join: use the join command
+      leave: use the leave command
+      spectate: use the spectate command
+      arenalist: use the arenalist command
+      help: use the help command
+      info: use the info command
+      list: use the list command
+      ready: use the ready command
+      shutup: use the shutup command
+      stats: use the stats command
+      version: use the version command
   fight:
     begins: Let the fight begin!
     draw: This match was a draw! No winners!
