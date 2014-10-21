@@ -27,6 +27,7 @@ low-priority-command-registration: false
 components:
     disabled:
     - help
+    - spawn-locations
     enabled:
     - bans
     - homes
@@ -43,7 +44,6 @@ components:
     - thor
     - online-list
     - stored-messages
-    - spawn-locations
     - info
     - world
     - player

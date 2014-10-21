@@ -1,7 +1,0 @@
-flat: {}
-mysql:
-  Host: localhost
-  Database: minecraft
-  Username: minecraft
-  Password: minecraft
-  Port: '3306'

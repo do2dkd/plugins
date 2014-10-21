@@ -3,19 +3,15 @@ GriefPrevention:
     world: -1
     world_nether: -1
     world_the_end: -1
-    resource: -1
     resource_n: -1
+    resource: -1
   Claims:
-    Expiration:
-      ChestClaimDays: 7
-      UnusedClaimDays: 14
-      AllClaimDays: 0
-      AutomaticNatureRestoration:
-        SurvivalWorlds: false
-        CreativeWorlds: true
-    Worlds:
-    - world
-    CreativeRulesWorlds: []
+    Mode:
+      world_the_end: Survival
+      resource_n: Survival
+      world: Survival
+      world_nether: Survival
+      resource: Survival
     PreventTheft: true
     ProtectCreatures: true
     PreventButtonsSwitches: true
@@ -25,7 +21,7 @@ GriefPrevention:
     EnderPearlsRequireAccessTrust: true
     InitialBlocks: 100
     BlocksAccruedPerHour: 100
-    MaxAccruedBlocks: 80000
+    MaxAccruedBlocks: 10000
     AutomaticNewPlayerClaimsRadius: 4
     ExtendIntoGroundDistance: 5
     CreationRequiresPermission: false
@@ -35,13 +31,15 @@ GriefPrevention:
     TrappedCommandCooldownHours: 8
     InvestigationTool: STICK
     ModificationTool: GOLD_SPADE
-    NoSurvivalBuildingOutsideClaims: false
-    WarnWhenBuildingOutsideClaims: true
-    AllowUnclaimingCreativeModeLand: true
-    AutoRestoreUnclaimedCreativeLand: true
+    Expiration:
+      ChestClaimDays: 7
+      UnusedClaimDays: 14
+      AllClaimDays: 0
+      AutomaticNatureRestoration:
+        SurvivalWorlds: false
   Spam:
-    Enabled: true
-    LoginCooldownMinutes: 2
+    Enabled: false
+    LoginCooldownSeconds: 60
     MonitorSlashCommands: /me;/tell;/global;/local
     WarningMessage: Please reduce your noise level.  Spammers will be banned.
     BanOffenders: true
@@ -73,9 +71,10 @@ GriefPrevention:
   BlockSurfaceOtherExplosions: true
   LimitSurfaceWaterBuckets: true
   LimitSkyTrees: true
+  LimitTreeGrowth: false
+  LimitPistonsToLandClaims: true
   FireSpreads: false
   FireDestroys: false
-  AddItemsToClaimedChests: true
   EavesdropEnabled: false
   WhisperCommands: /tell;/pm;/r
   SmartBan: true

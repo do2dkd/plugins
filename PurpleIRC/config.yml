@@ -25,6 +25,7 @@ message-format:
   irc-ess-helpop: '&4[HelpOp] %DISPLAYNAME%&r: %MESSAGE%'
   irc-action: '&r[&r#minec&r] ***%NAME%&r %MESSAGE%'
   irc-chat: '&r[&r#minec&r]<%NAME%&r> %MESSAGE%'
+  irc-chat-response: ' &6-> &7Minecraft: %MESSAGE%'
   irc-pchat: '&dPrivate message: &r[&r#minec&r]<%NAME%&r> %MESSAGE%'
   irc-pchat-response: ' &6-> &7%TARGET%: %MESSAGE%'
   irc-hchat-response: ' &6-> &7%TARGET%: %MESSAGE%'

@@ -378,3 +378,33 @@ Messages:
     Text: To allow explosives to destroy blocks in this land claim, use /ClaimExplosions.
   PlayerInPvPSafeZone:
     Text: That player is in a PvP safe zone.
+  SuccessfulAbandonExcludingLocked:
+    Text: All claims abandoned except for locked claims.  You now have {0} available claim blocks.
+    Notes: '0: remaining blocks'
+  SuccessfulAbandonIncludingLocked:
+    Text: All claims abandoned including locked claims.  You now have {0} available claim blocks.
+    Notes: '0: remaining blocks'
+  SubdivisionDemo:
+    Text: 'Land Claim Help:  http://tinyurl.com/7urdtue'
+  DeleteAllSuccessExcludingLocked:
+    Text: Deleted all of {0}'s claims excluding locked claims.
+    Notes: '0: owner''s name'
+  DeleteAllSuccessIncludingLocked:
+    Text: Deleted all of {0}'s claims including locked claims.
+    Notes: '0: owner''s name'
+  CreativeBasicsDemoAdvertisement:
+    Text: 'Land Claim Help:  http://tinyurl.com/c7bajb8'
+  SurvivalBasicsDemoAdvertisement:
+    Text: 'Land Claim Help:  http://tinyurl.com/6nkwegj'
+  ClaimLocked:
+    Text: This claim has been successfully locked against accidental/automatic deletion. Use /unlockclaim to unlock.
+  ClaimUnlocked:
+    Text: This claim has been successfully unlocked.
+  DeleteLockedClaimWarning:
+    Text: This claim is locked.  If you're sure you want to delete it, use /DeleteClaim again.
+  ConfirmAbandonLockedClaim:
+    Text: This claim has been locked.  If you really want to abandon it, use /AbandonClaim again.
+  LoginSpamWait:
+    Text: You must wait {0} more minutes before logging-in again.
+  NoPistonsOutsideClaims:
+    Text: 'Warning: Pistons won''t move blocks outside land claims.'
