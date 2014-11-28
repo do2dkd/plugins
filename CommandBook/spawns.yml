@@ -10,7 +10,7 @@
 # REMEMBER TO KEEP PERIODICAL BACKUPS.
 #
 
-world: {pitch: -3.5999956, yaw: 271.9402}
+world: {pitch: -0.15002513, yaw: 269.84073}
 world_nether: {pitch: 0.0, yaw: 0.0}
 world_the_end: {pitch: 0.0, yaw: 0.0}
 resource_n: {pitch: 0.0, yaw: 0.0}

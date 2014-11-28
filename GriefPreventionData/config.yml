@@ -5,13 +5,15 @@ GriefPrevention:
     world_the_end: -1
     resource_n: -1
     resource: -1
+    resource_e: -1
   Claims:
     Mode:
       world_the_end: Survival
-      resource_n: Survival
+      resource_n: Disabled
+      resource: Survival
+      resource_e: Disabled
       world: Survival
       world_nether: Survival
-      resource: Survival
     PreventTheft: true
     ProtectCreatures: true
     PreventButtonsSwitches: true
@@ -19,16 +21,17 @@ GriefPrevention:
     LockTrapDoors: false
     LockFenceGates: true
     EnderPearlsRequireAccessTrust: true
+    ProtectFires: false
+    ProtectHorses: true
     InitialBlocks: 100
     BlocksAccruedPerHour: 100
-    MaxAccruedBlocks: 10000
+    MaxAccruedBlocks: 80000
+    AbandonReturnRatio: 1.0
     AutomaticNewPlayerClaimsRadius: 4
     ExtendIntoGroundDistance: 5
     CreationRequiresPermission: false
     MinimumSize: 10
     MaximumDepth: 0
-    IdleLimitDays: 0
-    TrappedCommandCooldownHours: 8
     InvestigationTool: STICK
     ModificationTool: GOLD_SPADE
     Expiration:
@@ -51,8 +54,6 @@ GriefPrevention:
     - world
     - world_nether
     - world_the_end
-    - resource
-    - resource_n
     ProtectFreshSpawns: true
     PunishLogout: true
     CombatTimeoutSeconds: 15
@@ -61,15 +62,12 @@ GriefPrevention:
     ProtectPlayersInLandClaims:
       PlayerOwnedClaims: true
       AdministrativeClaims: true
-  Trees:
-    RemoveFloatingTreetops: true
-    RegrowGriefedTrees: true
+      AdministrativeSubdivisions: true
   Economy:
     ClaimBlocksPurchaseCost: 0.0
     ClaimBlocksSellValue: 0.0
   BlockSurfaceCreeperExplosions: true
   BlockSurfaceOtherExplosions: true
-  LimitSurfaceWaterBuckets: true
   LimitSkyTrees: true
   LimitTreeGrowth: false
   LimitPistonsToLandClaims: true

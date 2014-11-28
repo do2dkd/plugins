@@ -14,14 +14,6 @@ sets:
                 world: world
                 y: 104.5
                 x: -1233.5
-            _sign_world_-1800_65_-1:
-                icon: warning
-                markup: true
-                label: 매우 위험한 지역
-                z: -0.5
-                world: world
-                y: 65.5
-                x: -1799.5
         layerprio: 0
         areas: {
             }

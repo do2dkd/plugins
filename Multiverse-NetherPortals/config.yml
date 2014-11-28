@@ -2,7 +2,5 @@ bounceback: true
 worlds:
   resource:
     portalgoesto:
+      END: resource_e
       NETHER: resource_n
-  resource_n:
-    portalgoesto:
-      NETHER: resource

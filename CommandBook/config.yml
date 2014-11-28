@@ -27,8 +27,8 @@ low-priority-command-registration: false
 components:
     disabled:
     - help
-    - spawn-locations
     enabled:
+    - spawn-locations
     - bans
     - homes
     - warps

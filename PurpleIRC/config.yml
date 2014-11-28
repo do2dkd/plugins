@@ -69,6 +69,7 @@ message-format:
   rts-reopen: '[RTS:Reopen] #%TICKETNUMBER% <%NAME%> %MESSAGE%'
   dynmap-web-chat: '[Dynmap] <%NAME%> %MESSAGE%'
   irc-dynmap-web-chat: '[IRC] %MESSAGE%'
+  irc-action-dynmap-web-chat: '[IRC] ***%NAME% %MESSAGE%'
   ore-broadcast: '[OreBroadcast] %MESSAGE%'
   jobs-separator: ', '
   irc-hero-channels:

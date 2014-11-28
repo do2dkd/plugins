@@ -408,3 +408,11 @@ Messages:
     Text: You must wait {0} more minutes before logging-in again.
   NoPistonsOutsideClaims:
     Text: 'Warning: Pistons won''t move blocks outside land claims.'
+  SoftMuted:
+    Text: Soft-muted {0}.
+    Notes: The changed player's name.
+  UnSoftMuted:
+    Text: Un-soft-muted {0}.
+    Notes: The changed player's name.
+  PlayerNotFound2:
+    Text: No player by that name has logged in recently.

@@ -7,13 +7,13 @@
 #  http://dev.bukkit.org/server-mods/vanish/pages/configuration/
 #
 fakeannounce:
-    automaticforsilentjoin: false
+    automaticforsilentjoin: true
     join: '%p joined the game.'
     quit: '%p left the game.'
 hooks:
     essentials: false
     dynmap: true
-    JSONAPI: true
+    JSONAPI: false
     spoutcraft: false
 checkupdates: true
 permissionsupdates:
@@ -21,9 +21,9 @@ permissionsupdates:
 effects:
     lightning:
         count: 1
-colornametags: false
+colornametags: true
 
 permtest: false
 debug: false
-configVersionDoNotTouch: 
+configVersionDoNotTouch:
     SeriouslyThisWillEraseYourConfig: 5

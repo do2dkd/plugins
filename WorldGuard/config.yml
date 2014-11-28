@@ -27,6 +27,7 @@ regions:
         dsn: jdbc:mysql://localhost:3306/minecraft
         username: minecraft
         password: minecraft
+        table-prefix: ''
     enable: true
     invincibility-removes-mobs: false
     high-frequency-flags: false
@@ -36,6 +37,11 @@ regions:
     max-region-count-per-player:
         default: 7
     explosion-flags-block-entity-damage: true
+    uuid-migration:
+        perform-on-next-start: false
+        keep-names-that-lack-uuids: true
+    fake-player-build-override: true
+    protect-against-liquid-flow: false
 auto-invincible: false
 use-player-move-event: true
 security:
@@ -154,3 +160,12 @@ blacklist:
             open-files: 10
 summary-on-start: true
 use-player-teleports: true
+auto-invincible-group: false
+auto-no-drowning-group: false
+build-permission-nodes:
+    enable: false
+    deny-message: '&eSorry, but you are not permitted to do that here.'
+event-handling:
+    block-entity-spawns-with-untraceable-cause: false
+    interaction-whitelist: []
+    emit-block-use-at-feet: []
